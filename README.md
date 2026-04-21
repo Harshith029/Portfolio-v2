@@ -1,4 +1,4 @@
-# harshith.dev — Portfolio
+# Harshith.dev — Portfolio
 
 Personal portfolio of **Harshith Pali** — AI Engineer and full-stack developer based in Hyderabad.
 
