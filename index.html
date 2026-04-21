@@ -1783,6 +1783,9 @@
       grid-template-columns: 1fr;
     }
     .project-card { grid-column: auto; min-height: auto; }
+
+    /* Hide custom project visuals on mobile — they're designed for wide screens */
+    .project-media { display: none; }
     .work-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .project-snapshot { grid-template-columns: 1fr; }
     .brain-input-row { flex-direction: column; }
