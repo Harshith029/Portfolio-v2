@@ -1249,31 +1249,6 @@
   }
   .lab-meta span { color: var(--amber); }
 
-  /* ─── education (compact) ─── */
-  .education-compact {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1px;
-    overflow: hidden;
-    border: 1px solid var(--line); border-radius: var(--radius);
-    background: var(--line);
-  }
-  .edu-cell {
-    padding: 22px;
-    background: rgba(16, 17, 19, 0.88);
-  }
-  .edu-cell time {
-    display: block;
-    font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--amber); font-weight: 700;
-    margin-bottom: 12px;
-  }
-  .edu-cell h3 {
-    margin: 0 0 4px;
-    font-family: var(--serif); font-size: 1.15rem; font-weight: 500;
-  }
-  .edu-cell p { margin: 0; color: var(--muted); font-size: 12px; }
-
   /* ─── brain (second brain) ─── */
   .brain-layout {
     display: grid;
@@ -1754,7 +1729,7 @@
       height: 320px; min-height: 320px;
       border-right: 0; border-bottom: 1px solid var(--line);
     }
-    .stack-grid, .process-flow, .education-compact {
+    .stack-grid, .process-flow {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
     .lab-stack { grid-template-columns: 1fr; }
@@ -1778,7 +1753,7 @@
     }
     .filters { justify-content: flex-start; }
     .projects-grid, .capability-grid, .faq-grid,
-    .education-compact, .contact-links, .form-grid,
+    .contact-links, .form-grid,
     .process-flow {
       grid-template-columns: 1fr;
     }
@@ -2398,38 +2373,11 @@
     </div>
   </section>
 
-  <!-- ═══ EDUCATION (compact) ═══ -->
-  <section class="section compact" id="education">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div class="section-num">06 / Education</div>
-        <h2 class="section-title">The academic path behind the <em>builder habit.</em></h2>
-      </div>
-      <div class="education-compact reveal">
-        <div class="edu-cell">
-          <time>Aug 2024 — Present</time>
-          <h3>Mahindra University</h3>
-          <p>B.Tech in Computer Science · focus on AI/ML, algorithms, and systems.</p>
-        </div>
-        <div class="edu-cell">
-          <time>2021 — 2024</time>
-          <h3>FIITJEE Junior College</h3>
-          <p>Senior secondary · JEE/KVPY preparation track, Physics &amp; Mathematics.</p>
-        </div>
-        <div class="edu-cell">
-          <time>2018 — 2021</time>
-          <h3>Sri Chaitanya School</h3>
-          <p>Secondary education · merit scholar, early engineering-exposure track.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ═══ SECOND BRAIN (Brain upgrade) ═══ -->
   <section class="section compact" id="brain">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="section-num">07 / Second Brain</div>
+        <div class="section-num">06 / Second Brain</div>
         <h2 class="section-title">A local knowledge base that knows <em>my work.</em></h2>
       </div>
       <div class="brain-layout">
@@ -2474,7 +2422,7 @@
   <section class="section" id="hire">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="section-num">08 / Why Hire Me</div>
+        <div class="section-num">07 / Why Hire Me</div>
         <h2 class="section-title">What you actually get when you <em>hire me.</em></h2>
       </div>
       <div class="hire-layout">
@@ -2531,7 +2479,7 @@
   <section class="section compact" id="contact">
     <div class="wrap contact-layout">
       <div class="reveal">
-        <div class="section-num">09 / Contact</div>
+        <div class="section-num">08 / Contact</div>
         <h2 class="contact-big">Have an <em>AI problem?</em><br>Let's solve it.</h2>
         <p class="hero-desc">Open to AI/ML internships, full-stack engineering roles, freelance builds, and collaborations. Response within 24 hours.</p>
         <div class="contact-links">
@@ -2572,7 +2520,6 @@
       <button class="cmd-item" type="button" data-action="scroll:work">Go to work <span>Projects</span></button>
       <button class="cmd-item" type="button" data-action="scroll:stack">Go to stack <span>Tools</span></button>
       <button class="cmd-item" type="button" data-action="scroll:process">Go to process <span>How I work</span></button>
-      <button class="cmd-item" type="button" data-action="scroll:education">Go to education <span>Timeline</span></button>
       <button class="cmd-item" type="button" data-action="scroll:brain">Open second brain <span>Ask</span></button>
       <button class="cmd-item" type="button" data-action="scroll:hire">Why hire me <span>Value</span></button>
       <button class="cmd-item" type="button" data-action="scroll:contact">Go to contact <span>Email</span></button>
@@ -3175,14 +3122,7 @@
         `Fastest: <a href="mailto:harshith.pali3286@gmail.com">email him directly</a> — replies within 24 hours. Also on <a href="https://www.linkedin.com/in/krishnaharshith/" target="_blank" rel="noopener">LinkedIn</a>, <a href="https://github.com/Harshith029" target="_blank" rel="noopener">GitHub</a>, <a href="https://huggingface.co/Harshdev09" target="_blank" rel="noopener">HuggingFace</a>, <a href="https://peerlist.io/harshdev09" target="_blank" rel="noopener">Peerlist</a>, and writing on <a href="https://dev.to/harshithpali" target="_blank" rel="noopener">Dev.to</a> + <a href="https://medium.com/@harshith.pali3286" target="_blank" rel="noopener">Medium</a>.`
       ]
     },
-    {
-      id: "education",
-      keywords: ["education", "study", "studies", "college", "university", "school", "mahindra", "fiitjee", "sri chaitanya", "degree", "b.tech", "btech"],
-      answers: [
-        `Currently at <b>Mahindra University</b> doing a B.Tech in Computer Science (Aug 2024 – present), focused on AI/ML, algorithms, and systems. Before that: FIITJEE Junior College for JEE/KVPY prep (2021–2024), Sri Chaitanya School for secondary (2018–2021).`,
-        `B.Tech in CS at <b>Mahindra University</b>, started Aug 2024. FIITJEE before that for competitive exam prep. The portfolio work happens alongside coursework, not instead of it.`
-      ]
-    },
+   
     {
       id: "why-hire",
       keywords: ["why hire", "why should i hire", "why should you hire", "should i hire", "hire harshith", "hire him", "hire you", "reasons to hire", "why you", "value", "what do i get", "what would i get", "what will i get"],
@@ -3393,7 +3333,6 @@
     "scroll:work": () => document.querySelector("#work").scrollIntoView({ behavior: "smooth" }),
     "scroll:stack": () => document.querySelector("#stack").scrollIntoView({ behavior: "smooth" }),
     "scroll:process": () => document.querySelector("#process").scrollIntoView({ behavior: "smooth" }),
-    "scroll:education": () => document.querySelector("#education").scrollIntoView({ behavior: "smooth" }),
     "scroll:brain": () => document.querySelector("#brain").scrollIntoView({ behavior: "smooth" }),
     "scroll:hire": () => document.querySelector("#hire").scrollIntoView({ behavior: "smooth" }),
     "scroll:contact": () => document.querySelector("#contact").scrollIntoView({ behavior: "smooth" }),
