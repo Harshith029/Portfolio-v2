@@ -6,7 +6,7 @@
 <meta name="description" content="Harshith Pali — AI engineer and full-stack developer building production-grade AI systems, backend APIs, and web products from Hyderabad.">
 <meta name="theme-color" content="#0a0a0b">
 <meta name="author" content="Harshith Pali">
-<meta name="keywords" content="Harshith Pali, AI engineer, full-stack developer, FastAPI, React, LoRA, PyTorch, Hyderabad, software engineer, Mahindra University">
+<meta name="keywords" content="Harshith Pali, AI engineer, full-stack developer, FastAPI, React, LoRA, PyTorch, AI agent security, MCP, Postgres, entity resolution, Hyderabad, software engineer, Mahindra University">
 <meta property="og:title" content="Harshith Pali — AI Engineer & Full-Stack Developer">
 <meta property="og:description" content="Building production AI systems, APIs, and web products end-to-end. Based in Hyderabad.">
 <meta property="og:type" content="website">
@@ -657,7 +657,7 @@
     background: linear-gradient(135deg, rgba(255, 91, 46, 0.16), transparent 42%, rgba(127, 217, 207, 0.1));
   }
 
-  /* SafeMigrate visual — FIXED layout */
+  /* safemigrate-lint visual — migration lint board */
   .safemigrate-visual {
     background:
       radial-gradient(circle at 88% 14%, rgba(127, 217, 207, 0.18), transparent 28%),
@@ -813,10 +813,14 @@
   }
   .puzzle-tile {
     min-height: 70px;
-    display: grid; place-items: center;
+    display: grid; place-items: center; align-content: center; gap: 4px;
     border: 1px solid var(--line-strong); border-radius: var(--radius);
     background: rgba(10, 10, 11, 0.62);
-    color: var(--ink); font-size: 12px; font-weight: 700;
+    color: var(--ink); font-size: 11px; font-weight: 700; letter-spacing: 0.04em;
+  }
+  .puzzle-tile small {
+    font-family: var(--serif); font-size: 13px; font-weight: 600;
+    color: var(--cyan); letter-spacing: 0;
   }
 
   .nemotron-visual .eval-bars {
@@ -833,97 +837,6 @@
     background: linear-gradient(90deg, var(--accent), var(--amber));
   }
 
-  .quickdrop-visual {
-    background:
-      radial-gradient(circle at 82% 18%, rgba(122, 214, 122, 0.18), transparent 28%),
-      radial-gradient(circle at 12% 86%, rgba(245, 199, 106, 0.15), transparent 34%),
-      linear-gradient(rgba(242, 239, 231, 0.035) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(242, 239, 231, 0.035) 1px, transparent 1px),
-      #0d0f11;
-    background-size: auto, auto, 24px 24px, 24px 24px, auto;
-  }
-  .quickdrop-map {
-    position: absolute; inset: 62px 18px 18px; z-index: 2;
-    display: grid;
-    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-    gap: 12px;
-  }
-  .phone-card, .route-card, .metric-tile {
-    border: 1px solid var(--line-strong); border-radius: var(--radius);
-    background: rgba(10, 10, 11, 0.74);
-    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.28);
-  }
-  .phone-card {
-    padding: 12px;
-    display: grid; align-content: start; gap: 8px;
-    border-color: rgba(122, 214, 122, 0.34); border-radius: 18px;
-  }
-  .chat-bubble {
-    width: fit-content; max-width: 100%; margin: 0;
-    padding: 7px 9px; border-radius: 10px;
-    background: rgba(122, 214, 122, 0.14); color: var(--ink);
-    font-size: 10px;
-  }
-  .chat-bubble.is-shop { margin-left: auto; background: rgba(127, 217, 207, 0.13); }
-  .chat-bubble.is-delivery { background: rgba(245, 199, 106, 0.14); color: var(--amber); }
-
-  .route-card {
-    padding: 12px;
-    display: grid; grid-template-rows: auto auto auto; gap: 12px;
-  }
-  .route-head {
-    display: flex; align-items: center; justify-content: space-between;
-    gap: 10px;
-  }
-  .route-head b { color: var(--ink); font-size: 12px; }
-  .route-head span {
-    min-height: 28px; display: inline-flex; align-items: center;
-    padding: 0 10px;
-    border: 1px solid rgba(122, 214, 122, 0.34);
-    border-radius: 999px;
-    color: var(--green); background: rgba(122, 214, 122, 0.1);
-    font-size: 10px; font-weight: 700;
-  }
-  .route-steps {
-    position: relative; min-height: 54px;
-    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
-    align-items: center; gap: 8px;
-  }
-  .route-steps::before {
-    content: ""; position: absolute;
-    left: 14%; right: 14%; top: 50%; height: 2px;
-    transform: translateY(-50%);
-    background: linear-gradient(90deg, rgba(127, 217, 207, 0.2), rgba(255, 91, 46, 0.5), rgba(122, 214, 122, 0.4));
-  }
-  .route-steps span {
-    position: relative; z-index: 1;
-    width: 40px; height: 40px;
-    display: grid; place-items: center; justify-self: center;
-    border: 1px solid var(--line-strong); border-radius: 999px;
-    background: rgba(16, 17, 19, 0.92);
-    color: var(--ink); font-size: 9px; font-weight: 700; text-transform: uppercase;
-  }
-  .route-metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
-  .metric-tile {
-    min-height: 68px; padding: 10px;
-    display: grid; align-content: start; gap: 4px;
-  }
-  .metric-tile span { color: var(--quiet); font-size: 9px; font-weight: 700; text-transform: uppercase; }
-  .metric-tile b { color: var(--ink); font-size: 11px; }
-  .price-strip {
-    min-height: 42px;
-    display: flex; align-items: center; justify-content: space-between;
-    gap: 12px; padding: 0 12px;
-    border: 1px solid rgba(245, 199, 106, 0.35);
-    border-radius: var(--radius);
-    background: rgba(245, 199, 106, 0.08);
-  }
-  .price-formula { display: grid; gap: 4px; }
-  .price-formula span, .settlement-note {
-    color: var(--quiet); font-size: 9px; font-weight: 700; text-transform: uppercase;
-  }
-  .price-formula b { color: var(--ink); font-size: 12px; }
-  .settlement-note { color: var(--amber); }
 
   .faultline-graph {
     position: absolute; inset: 68px 20px 22px; z-index: 2;
@@ -994,78 +907,130 @@
   .score-card span { display: block; color: var(--quiet); font-size: 9px; font-weight: 700; text-transform: uppercase; }
   .score-card b { display: block; margin-top: 4px; color: var(--ink); font-size: 12px; }
 
-  .chess-visual {
+  /* SENTINEL visual — provenance proxy */
+  .sentinel-visual {
     background:
-      radial-gradient(circle at 16% 20%, rgba(245, 199, 106, 0.16), transparent 28%),
-      radial-gradient(circle at 86% 82%, rgba(255, 91, 46, 0.17), transparent 30%),
+      radial-gradient(circle at 84% 16%, rgba(255, 91, 46, 0.18), transparent 30%),
+      radial-gradient(circle at 14% 84%, rgba(127, 217, 207, 0.14), transparent 32%),
       linear-gradient(rgba(242, 239, 231, 0.035) 1px, transparent 1px),
       linear-gradient(90deg, rgba(242, 239, 231, 0.035) 1px, transparent 1px),
       #0d0f11;
     background-size: auto, auto, 24px 24px, 24px 24px, auto;
   }
-  .chess-visual .board-wrap {
+  .sentinel-board {
     position: absolute; inset: 62px 18px 18px; z-index: 2;
-    display: grid;
-    grid-template-columns: minmax(148px, 1.02fr) minmax(0, 0.98fr);
-    gap: 12px;
+    display: grid; grid-template-rows: auto 1fr; gap: 12px;
   }
-  .mini-board {
-    display: grid; grid-template-columns: repeat(8, 1fr);
-    overflow: hidden; padding: 8px;
+  .taint-flow {
+    display: grid; grid-template-columns: 1fr auto 1fr auto 1fr;
+    align-items: center; gap: 6px;
+  }
+  .taint-node {
+    min-height: 54px; padding: 9px 7px;
+    display: grid; align-content: center; gap: 4px; text-align: center;
     border: 1px solid var(--line-strong); border-radius: var(--radius);
-    aspect-ratio: 1; background: rgba(10, 10, 11, 0.74);
-    box-shadow: inset 0 0 0 1px rgba(242, 239, 231, 0.04);
+    background: rgba(10, 10, 11, 0.72);
   }
-  .mini-board span {
-    position: relative; display: grid; place-items: center;
-    min-width: 0; aspect-ratio: 1;
-    font-size: 16px; font-weight: 700;
+  .taint-node strong {
+    color: var(--ink); font-family: var(--mono); font-size: 10px;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
   }
-  .mini-board span.light { background: #e2d8c7; color: #181717; }
-  .mini-board span.dark { background: #775a45; color: #f6efe5; }
-  .mini-board span.piece-white { text-shadow: 0 2px 10px rgba(255, 255, 255, 0.2); }
-  .mini-board span.piece-black { text-shadow: 0 2px 10px rgba(0, 0, 0, 0.38); }
-  .mini-board span.selected {
-    box-shadow: inset 0 0 0 2px rgba(127, 217, 207, 0.95), inset 0 0 0 999px rgba(127, 217, 207, 0.1);
+  .taint-node span {
+    color: var(--quiet); font-size: 8px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.04em;
   }
-  .mini-board span.legal::after, .mini-board span.capture::after {
-    content: ""; position: absolute;
+  .taint-node.is-retrieved, .taint-node.is-tainted { border-color: rgba(245, 199, 106, 0.42); }
+  .taint-node.is-retrieved span, .taint-node.is-tainted span { color: var(--amber); }
+  .taint-node.is-blocked {
+    border-color: rgba(255, 111, 97, 0.55);
+    background: rgba(255, 111, 97, 0.1);
   }
-  .mini-board span.legal::after {
-    width: 18%; height: 18%; min-width: 9px; min-height: 9px;
-    border-radius: 999px;
-    background: rgba(127, 217, 207, 0.84);
-    box-shadow: 0 0 16px rgba(127, 217, 207, 0.36);
-  }
-  .mini-board span.capture::after {
-    inset: 14%;
-    border: 2px solid rgba(255, 91, 46, 0.92); border-radius: 999px;
-  }
-  .move-panel {
-    padding: 12px;
-    display: grid; gap: 9px; align-content: center;
+  .taint-node.is-blocked strong, .taint-node.is-blocked span { color: var(--danger); }
+  .taint-arrow { color: var(--quiet); font-size: 0.95rem; font-weight: 700; text-align: center; }
+  .sentinel-cards { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 10px; }
+  .prov-card, .verdict-card {
+    padding: 11px; display: grid; align-content: start; gap: 7px;
     border: 1px solid var(--line-strong); border-radius: var(--radius);
     background: rgba(10, 10, 11, 0.74);
   }
-  .move-row {
-    min-height: 34px;
-    display: flex; align-items: center; justify-content: space-between;
-    gap: 10px; padding: 0 10px;
-    border: 1px solid var(--line-strong); border-radius: var(--radius);
-    background: rgba(16, 17, 19, 0.88);
-    color: var(--muted);
-    font-size: 10px; font-weight: 700;
+  .prov-chip-row { display: flex; flex-wrap: wrap; gap: 5px; }
+  .prov-chip {
+    min-height: 22px; display: inline-flex; align-items: center; padding: 0 7px;
+    border: 1px solid var(--line); border-radius: 999px;
+    background: rgba(242, 239, 231, 0.03);
+    color: var(--muted); font-size: 8px; font-weight: 700; letter-spacing: 0.04em;
   }
-  .move-row span { color: var(--cyan); }
-  .move-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
-  .move-pill {
-    min-height: 30px;
-    display: grid; place-items: center;
-    border: 1px solid var(--line-strong); border-radius: var(--radius);
-    background: rgba(242, 239, 231, 0.04);
-    color: var(--muted); font-size: 10px; font-weight: 700;
+  .prov-chip.is-risk {
+    border-color: rgba(255, 111, 97, 0.5);
+    background: rgba(255, 111, 97, 0.1);
+    color: var(--danger);
   }
-  .move-pill.is-best { border-color: rgba(127, 217, 207, 0.42); color: var(--cyan); }
+  .prov-card small, .verdict-card small { color: var(--muted); font-size: 9px; line-height: 1.35; }
+  .verdict-card { align-content: center; text-align: center; }
+  .verdict-card b {
+    color: var(--danger); font-family: var(--serif);
+    font-size: 1.9rem; font-weight: 600; line-height: 1;
+  }
+
+  /* KARMA visual — entity resolution */
+  .karma-visual {
+    background:
+      radial-gradient(circle at 14% 18%, rgba(127, 217, 207, 0.16), transparent 30%),
+      radial-gradient(circle at 86% 84%, rgba(255, 91, 46, 0.16), transparent 30%),
+      linear-gradient(rgba(242, 239, 231, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(242, 239, 231, 0.035) 1px, transparent 1px),
+      #0d0f11;
+    background-size: auto, auto, 24px 24px, 24px 24px, auto;
+  }
+  .karma-board {
+    position: absolute; inset: 62px 18px 18px; z-index: 2;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: center;
+  }
+  .source-stack { display: grid; gap: 8px; align-content: center; }
+  .source-row {
+    min-height: 42px; padding: 7px 10px;
+    display: grid; gap: 3px;
+    border: 1px solid var(--line-strong); border-radius: var(--radius);
+    background: rgba(10, 10, 11, 0.72);
+  }
+  .src-tag {
+    color: var(--cyan); font-size: 8px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.06em;
+  }
+  .source-row b {
+    color: var(--ink); font-size: 11px; font-weight: 600;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .karma-merge { position: relative; display: grid; place-items: center; }
+  .merge-line {
+    position: absolute; left: -14px; top: 50%; width: 14px; height: 2px;
+    transform: translateY(-50%);
+    background: linear-gradient(90deg, rgba(127, 217, 207, 0.15), var(--accent));
+  }
+  .ubid-card {
+    width: 100%; padding: 12px; display: grid; gap: 8px;
+    border: 1px solid rgba(127, 217, 207, 0.38); border-radius: var(--radius);
+    background: rgba(127, 217, 207, 0.06);
+  }
+  .ubid-card > b {
+    color: var(--ink); font-family: var(--serif);
+    font-size: 1.1rem; font-weight: 600; letter-spacing: -0.01em;
+  }
+  .karma-metric-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .karma-metric {
+    padding: 6px 8px; display: grid; gap: 2px;
+    border: 1px solid var(--line-strong); border-radius: var(--radius);
+    background: rgba(10, 10, 11, 0.6);
+  }
+  .karma-metric span { color: var(--quiet); font-size: 8px; font-weight: 700; text-transform: uppercase; }
+  .karma-metric b { color: var(--ink); font-size: 12px; }
+  .karma-chip {
+    justify-self: start;
+    min-height: 22px; display: inline-flex; align-items: center; padding: 0 9px;
+    border: 1px solid rgba(245, 199, 106, 0.35); border-radius: 999px;
+    background: rgba(245, 199, 106, 0.08);
+    color: var(--amber); font-size: 9px; font-weight: 700;
+  }
 
   .project-body {
     flex: 1;
@@ -1883,10 +1848,10 @@
           <span class="out">github: <span class="str">Harshith029</span> / huggingface: <span class="str">Harshdev09</span></span>
           <br>
           <div><span class="prompt">&gt;</span> <span class="cmd">ls</span> <span class="flag">./current-focus</span></div>
-          <span class="out">safemigrate-rl-env <span class="ok">[live]</span></span>
+          <span class="out">safemigrate-lint <span class="ok">[on pypi]</span></span>
+          <span class="out">sentinel-agent-security</span>
+          <span class="out">karma-entity-resolution <span class="ok">[hackathon win]</span></span>
           <span class="out">nemotron-reasoning-lora</span>
-          <span class="out">quickdrop-kirana-delivery</span>
-          <span class="out">aito-traffic-optimizer</span>
           <br>
           <div><span class="prompt">&gt;</span> <span class="cmd">cat</span> <span class="str">values.txt</span></div>
           <span class="out"><span class="comment">ship real systems, not prototypes</span></span>
@@ -1942,6 +1907,21 @@
             <p>I pick problems that have real constraints — cost caps, safety requirements, latency budgets, distribution friction. Then I ship working versions and iterate against reality.</p>
           </div>
 
+          <div class="achievement-banner reveal" role="region" aria-label="Hackathon win">
+            <div class="achievement-medal" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" width="22" height="22"><path d="M7 4h10v3a5 5 0 0 1-10 0V4Zm0 1H4v1a3 3 0 0 0 3 3m10-4h3v1a3 3 0 0 1-3 3M9 14h6M12 12v4m-2 4h4m-5 0v-1a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="achievement-copy">
+              <span class="label">Hackathon win · 2026</span>
+              <b>Winner — AI for Bharat 2026, Government of Karnataka</b><br>
+              <span>Built KARMA with team Progsolve: probabilistic entity resolution unifying 40+ state government databases.</span>
+            </div>
+            <div class="achievement-rank">
+              WINNER
+              <small>AI for Bharat</small>
+            </div>
+          </div>
+
           <div class="achievement-banner reveal" role="region" aria-label="Key achievement">
             <div class="achievement-medal" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" width="22" height="22"><path d="M12 2l2.5 5 5.5.8-4 3.9.9 5.5L12 14.5 7.1 17.2l.9-5.5-4-3.9 5.5-.8L12 2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
@@ -1993,68 +1973,67 @@
           <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">All</button>
           <button class="filter-button" type="button" data-filter="ai" aria-pressed="false">AI</button>
           <button class="filter-button" type="button" data-filter="backend" aria-pressed="false">Backend</button>
-          <button class="filter-button" type="button" data-filter="web" aria-pressed="false">Web</button>
           <button class="filter-button" type="button" data-filter="cloud" aria-pressed="false">Cloud</button>
         </div>
       </div>
 
       <div class="work-summary reveal">
         <div class="work-stat"><b>6</b><span>featured production builds</span></div>
-        <div class="work-stat"><b>4</b><span>AI / ML systems</span></div>
-        <div class="work-stat"><b>2</b><span>consumer-facing products</span></div>
+        <div class="work-stat"><b>5</b><span>AI / ML systems</span></div>
+        <div class="work-stat"><b>WIN</b><span>AI for Bharat 2026 · Govt of Karnataka</span></div>
         <div class="work-stat"><b>TOP 300</b><span>global rank · AWS challenge</span></div>
       </div>
 
       <div class="projects-grid">
-        <article class="project-card featured reveal" id="project-safemigrate" data-kind="ai backend">
+        <article class="project-card featured reveal" id="project-safemigrate-lint" data-kind="backend">
           <div class="project-media">
-            <div class="project-visual safemigrate-visual" role="img" aria-label="Database migration dashboard showing schema diff, rollback readiness, and reward shaping">
-              <div class="visual-label"><span>migration safety lab</span><span class="visual-badge">rollback ready</span></div>
+            <div class="project-visual safemigrate-visual" role="img" aria-label="Postgres migration linter showing findings grouped by severity, lock analysis, and a safe rewrite on a pull request">
+              <div class="visual-label"><span>migration lint on PR</span><span class="visual-badge">check run</span></div>
               <div class="migration-board">
                 <div class="migration-run-card">
-                  <span class="mini-label">migration run</span>
+                  <span class="mini-label">pull request</span>
                   <div class="run-sequence">
-                    <b>orders_v14</b>
+                    <b>0042_cleanup.sql</b>
                     <span class="run-arrow">→</span>
-                    <b>orders_v15</b>
+                    <b>2 findings</b>
                   </div>
-                  <div class="run-tag">dry run passed</div>
-                  <span class="migration-chip is-warn">safe policy</span>
+                  <div class="run-tag">check run: blocked</div>
+                  <span class="migration-chip is-warn">branch protection</span>
                 </div>
                 <div class="migration-overview">
                   <div class="migration-stat-grid">
                     <div class="migration-stat">
-                      <span>unsafe ops</span>
-                      <b>0 blocked</b>
-                      <small>policy stops risky writes.</small>
+                      <span>critical</span>
+                      <b>DROP COLUMN</b>
+                      <small>irreversible data loss.</small>
                     </div>
                     <div class="migration-stat">
-                      <span>rollback chain</span>
-                      <b>3 restore points</b>
-                      <small>savepoint staged before apply.</small>
+                      <span>warning</span>
+                      <b>FK · no NOT VALID</b>
+                      <small>holds AccessExclusiveLock.</small>
                     </div>
                   </div>
                   <div class="migration-steps">
-                    <div class="migration-step is-done"><span class="step-dot" aria-hidden="true"></span><strong>plan</strong><span>staged</span></div>
-                    <div class="migration-step is-done"><span class="step-dot" aria-hidden="true"></span><strong>check</strong><span>passed</span></div>
-                    <div class="migration-step is-live"><span class="step-dot" aria-hidden="true"></span><strong>save</strong><span>set</span></div>
-                    <div class="migration-step"><span class="step-dot" aria-hidden="true"></span><strong>apply</strong><span>safe</span></div>
+                    <div class="migration-step is-done"><span class="step-dot" aria-hidden="true"></span><strong>parse</strong><span>pglast</span></div>
+                    <div class="migration-step is-done"><span class="step-dot" aria-hidden="true"></span><strong>analyze</strong><span>33 rules</span></div>
+                    <div class="migration-step is-live"><span class="step-dot" aria-hidden="true"></span><strong>annotate</strong><span>per line</span></div>
+                    <div class="migration-step"><span class="step-dot" aria-hidden="true"></span><strong>comment</strong><span>on PR</span></div>
                   </div>
                   <div class="migration-chip-row">
-                    <span class="migration-chip">+ backup_email</span>
-                    <span class="migration-chip">drop blocked</span>
-                    <span class="migration-chip">restore ready</span>
+                    <span class="migration-chip">lock-aware</span>
+                    <span class="migration-chip">safe rewrite</span>
+                    <span class="migration-chip">MIT</span>
                   </div>
                   <div class="reward-card">
-                    <span>reward shaping</span>
-                    <b>stable trend</b>
+                    <span>findings by severity</span>
+                    <b>critical · warning · style</b>
                     <div class="reward-chart" aria-hidden="true">
-                      <span style="--h:34%"></span>
-                      <span style="--h:56%"></span>
-                      <span style="--h:46%"></span>
-                      <span style="--h:74%"></span>
-                      <span style="--h:68%"></span>
                       <span style="--h:90%"></span>
+                      <span style="--h:58%"></span>
+                      <span style="--h:44%"></span>
+                      <span style="--h:72%"></span>
+                      <span style="--h:30%"></span>
+                      <span style="--h:52%"></span>
                     </div>
                   </div>
                 </div>
@@ -2062,49 +2041,141 @@
             </div>
           </div>
           <div class="project-body">
-            <div class="project-meta"><span>2026</span><span>AI / Backend</span></div>
-            <h3>SafeMigrate</h3>
-            <p>A reinforcement-learning environment for safety-critical database migrations. Agents learn to plan, validate, and roll back schema changes without breaking production — unsafe operations are penalized, and rollback savepoints are rewarded.</p>
-            <div class="project-result"><b>Why it matters</b> Most AI agents generate SQL; SafeMigrate teaches them to generate <i>safe</i> SQL. Passed internal tests and compliance checks. Live on HuggingFace Spaces.</div>
+            <div class="project-meta"><span>2026</span><span>Developer Tooling / Postgres</span></div>
+            <h3>safemigrate-lint</h3>
+            <p>A GitHub Action, CLI, and pre-commit hook that lints Postgres migration SQL on every PR — catching the operations that actually break production: lock waits, table rewrites, and unsafe constraints. 33 safety rules + 6 opt-in style rules, parsed with a real Postgres parser (pglast / libpg_query).</p>
+            <div class="project-result"><b>Why it matters</b> I scanned ~700 real production migrations from Cal.com, Mattermost, Supabase, Hasura, and TimescaleDB — zero ran the textbook "dangerous" ops the popular linters warn loudest on. The real risks live one layer deeper, and safemigrate-lint is built around those. Published on PyPI, MIT-licensed, free.</div>
             <div class="project-snapshot">
               <div class="snapshot-item"><span>Role</span><b>Solo engineer</b></div>
-              <div class="snapshot-item"><span>Core idea</span><b>Safe agent ops</b></div>
-              <div class="snapshot-item"><span>Risk handled</span><b>Bad migrations</b></div>
+              <div class="snapshot-item"><span>Ships as</span><b>Action · CLI · hook</b></div>
+              <div class="snapshot-item"><span>Risk handled</span><b>Prod-breaking SQL</b></div>
             </div>
-            <div class="project-tags"><span class="chip">FastAPI</span><span class="chip">SQLite</span><span class="chip">Pydantic</span><span class="chip">Docker</span><span class="chip">RL Env</span></div>
-            <div class="explain">The hard part isn't generating SQL. It's teaching an agent that migrations have consequences — so planning and rollback become part of the reward loop, not decorative steps.</div>
+            <div class="project-tags"><span class="chip">Python</span><span class="chip">pglast</span><span class="chip">GitHub Actions</span><span class="chip">CLI</span><span class="chip">pre-commit</span></div>
+            <div class="explain">Cross-statement context is the trick: a single-statement linter screams about FK-to-new-table and other false positives. safemigrate-lint tracks context across the migration, so it only flags the locks and rewrites that would actually stall a deploy — then posts the safe rewrite inline on the PR.</div>
             <div class="card-actions">
-              <a class="button primary" href="https://huggingface.co/spaces/Harshdev09/safemigrate" target="_blank" rel="noopener" data-hover>Live on HF Spaces</a>
+              <a class="button primary" href="https://github.com/Harshith029/safemigrate-lint" target="_blank" rel="noopener" data-hover>Code · GitHub Action</a>
+              <a class="button" href="https://pypi.org/project/safemigrate-lint/" target="_blank" rel="noopener" data-hover>PyPI</a>
               <button class="button" type="button" data-explain data-hover>Explain system</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" id="project-sentinel" data-kind="ai backend">
+          <div class="project-media">
+            <div class="project-visual sentinel-visual" role="img" aria-label="SENTINEL provenance proxy intercepting an agent tool call and blocking a tainted send_email action">
+              <div class="visual-label"><span>provenance proxy</span><span class="visual-badge">action blocked</span></div>
+              <div class="sentinel-board">
+                <div class="taint-flow">
+                  <div class="taint-node is-retrieved"><strong>web_fetch</strong><span>retrieved</span></div>
+                  <div class="taint-arrow" aria-hidden="true">→</div>
+                  <div class="taint-node is-tainted"><strong>summarize</strong><span>tainted</span></div>
+                  <div class="taint-arrow" aria-hidden="true">→</div>
+                  <div class="taint-node is-blocked"><strong>send_email</strong><span>blocked</span></div>
+                </div>
+                <div class="sentinel-cards">
+                  <div class="prov-card">
+                    <span class="mini-label">provenance set</span>
+                    <div class="prov-chip-row">
+                      <span class="prov-chip">SYSTEM</span>
+                      <span class="prov-chip">USER</span>
+                      <span class="prov-chip">AGENT</span>
+                      <span class="prov-chip is-risk">RETRIEVED</span>
+                    </div>
+                    <small>union over the derived_from lineage</small>
+                  </div>
+                  <div class="verdict-card">
+                    <span class="mini-label">authorization</span>
+                    <b>DENY</b>
+                    <small>tainted lineage → high-risk tool call</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta"><span>2026</span><span>AI Security / Agents</span></div>
+            <h3>SENTINEL</h3>
+            <p>A provenance-aware security proxy for agentic AI. It sits in front of an agent as an MCP (Model Context Protocol) server, so every tool call physically traverses it — and authorizes each one against the provenance of everything it derived from. An instruction that arrived inside retrieved web content can never drive a high-risk action, even when it slips past content filters.</p>
+            <div class="project-result"><b>The core idea</b> Risk lives in the causal path from instruction-origin to action, not in the text of either. Interception is guaranteed by network topology, not code wrapping — and it's agent-agnostic: it secures Foundry, Claude, GPT, or any custom MCP client with no agent-code changes.</div>
+            <div class="project-tags"><span class="chip">Python</span><span class="chip">MCP</span><span class="chip">FastAPI</span><span class="chip">OpenTelemetry</span><span class="chip">Prompt-Injection</span></div>
+            <div class="explain">Provenance is a set of trust labels (SYSTEM &gt; USER &gt; AGENT &gt; RETRIEVED_CONTENT) unioned over a span's transitive lineage — not a single mutable enum. A cycle-safe graph walk computes taint; the authorization engine parses policy into a typed AST (never eval) and blocks the action. Taint only clears through an explicit, auditable structured extractor.</div>
+            <div class="card-actions">
+              <a class="button primary" href="https://sentinel-i63x.onrender.com" target="_blank" rel="noopener" data-hover>Live demo</a>
+              <a class="button" href="https://github.com/Harshith029/Sentinel" target="_blank" rel="noopener" data-hover>Code</a>
+              <button class="button" type="button" data-explain data-hover>Explain</button>
             </div>
           </div>
         </article>
 
         <article class="project-card reveal" id="project-nemotron" data-kind="ai">
           <div class="project-media">
-            <div class="project-visual nemotron-visual">
-              <div class="visual-label"><span>reasoning eval lab</span><span class="visual-badge">data first</span></div>
+            <div class="project-visual nemotron-visual" role="img" aria-label="Per-category solver coverage for the Nemotron reasoning pipeline">
+              <div class="visual-label"><span>solver coverage</span><span class="visual-badge">verified CoT</span></div>
               <div class="puzzle-grid">
-                <div class="puzzle-tile">BIT</div>
-                <div class="puzzle-tile">CIPHER</div>
-                <div class="puzzle-tile">ALG</div>
+                <div class="puzzle-tile">CIPHER<small>100%</small></div>
+                <div class="puzzle-tile">NUMERAL<small>100%</small></div>
+                <div class="puzzle-tile">GRAVITY<small>99.7%</small></div>
               </div>
               <div class="eval-bars" aria-hidden="true">
-                <div class="eval-bar"><span style="--w:58%"></span></div>
+                <div class="eval-bar"><span style="--w:100%"></span></div>
+                <div class="eval-bar"><span style="--w:100%"></span></div>
                 <div class="eval-bar"><span style="--w:76%"></span></div>
-                <div class="eval-bar"><span style="--w:64%"></span></div>
               </div>
             </div>
           </div>
           <div class="project-body">
             <div class="project-meta"><span>2026</span><span>AI / Fine-tuning</span></div>
             <h3>Nemotron Reasoning LoRA</h3>
-            <p>LoRA adapter development and evaluation for NVIDIA's Nemotron reasoning model — with synthetic data generators and eval harnesses for bit manipulation, substitution ciphers, and algebraic puzzles.</p>
-            <div class="project-result"><b>Applied ML insight</b> Naïve LoRA fine-tuning actually hurt baseline performance. The real leverage was in data distribution analysis, not more training.</div>
-            <div class="project-tags"><span class="chip">LoRA</span><span class="chip">PyTorch</span><span class="chip">HuggingFace</span><span class="chip">Synthetic Data</span></div>
-            <div class="explain">The lesson: in applied ML, fine-tuning is the easy part. Understanding why the model is failing — and fixing the data, not the recipe — is where engineers earn their keep.</div>
+            <p>A from-scratch, fully-offline pipeline for the NVIDIA Nemotron Model Reasoning Challenge. Deterministic Python solvers for each puzzle category — gravity, unit conversion, numerals, ciphers, bit manipulation, equations — infer the hidden rule, emit a step-by-step trace, and distill it into a LoRA adapter for <code>Nemotron-3-Nano-30B</code>.</p>
+            <div class="project-result"><b>Verified reasoning, not vibes</b> The solvers generate a chain-of-thought corpus and keep <i>only</i> solver-correct traces — then a rank-32 LoRA distills that reasoning into the base model, so no solver code is needed at inference. Coverage: 100% on cipher, numeral, and unit-conversion; 99.7% on gravity; ~76% on bit manipulation.</div>
+            <div class="project-snapshot">
+              <div class="snapshot-item"><span>Solvers</span><b>6 categories</b></div>
+              <div class="snapshot-item"><span>Coverage</span><b>up to 100%</b></div>
+              <div class="snapshot-item"><span>Adapter</span><b>LoRA · r32</b></div>
+            </div>
+            <div class="project-tags"><span class="chip">LoRA</span><span class="chip">PyTorch</span><span class="chip">vLLM</span><span class="chip">Synthetic CoT</span><span class="chip">HuggingFace</span></div>
+            <div class="explain">Four stages — Solve → Generate → Distill → Submit. Solvers turn algorithmic puzzles into verified (prompt, trace) pairs; LoRA SFT (rank 32, completion-only masking) teaches the base model to reproduce the reasoning; the adapter is scored in vLLM by extracting the <code>\boxed{…}</code> answer. The holdouts are bit manipulation (~76%, solved with DSL search + GF(2) affine synthesis) and equation, which composes a per-problem symbol substitution with a numeric rule from only a handful of examples.</div>
             <div class="card-actions">
-              <a class="button" href="https://huggingface.co/Harshdev09" target="_blank" rel="noopener" data-hover>HF profile</a>
+              <a class="button primary" href="https://github.com/Harshith029/nemotron-reasoning-solvers" target="_blank" rel="noopener" data-hover>Code</a>
+              <button class="button" type="button" data-explain data-hover>Explain</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" id="project-karma" data-kind="ai backend">
+          <div class="project-media">
+            <div class="project-visual karma-visual" role="img" aria-label="KARMA linking duplicate business records across Karnataka government databases into one unified business identifier">
+              <div class="visual-label"><span>entity resolution</span><span class="visual-badge">UBID match</span></div>
+              <div class="karma-board">
+                <div class="source-stack">
+                  <div class="source-row"><span class="src-tag">KSPCB</span><b>Sri Lakshmi Traders</b></div>
+                  <div class="source-row"><span class="src-tag">BESCOM</span><b>S. L. Traders</b></div>
+                  <div class="source-row"><span class="src-tag">Shop Est</span><b lang="kn">ಶ್ರೀ ಲಕ್ಷ್ಮಿ ಟ್ರೇಡರ್ಸ್</b></div>
+                </div>
+                <div class="karma-merge">
+                  <div class="merge-line" aria-hidden="true"></div>
+                  <div class="ubid-card">
+                    <span class="mini-label">unified business id</span>
+                    <b>UBID·KA·9253</b>
+                    <div class="karma-metric-row">
+                      <div class="karma-metric"><span>match</span><b>0.94</b></div>
+                      <div class="karma-metric"><span>sources</span><b>3 → 1</b></div>
+                    </div>
+                    <span class="karma-chip">Kannada ↔ Roman</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta"><span>2026</span><span>Data Systems / GovTech</span></div>
+            <h3>KARMA — Karnataka Active Record &amp; Master Aggregator</h3>
+            <p>Probabilistic entity resolution across 40+ Karnataka government department databases. It assigns one Unified Business Identifier (UBID) per real business by linking records from KSPCB, BESCOM, Shop Establishment, Factories, and Labour systems — with no LLMs and a per-field audit trail on every match decision.</p>
+            <div class="project-result"><b>🏆 Winner — AI for Bharat 2026</b> Built with team Progsolve for the Government of Karnataka hackathon. Verified on 49,857 synthetic records → 9,253 cross-source UBIDs in ~80 seconds, 101/101 tests passing.</div>
+            <div class="project-tags"><span class="chip">Python</span><span class="chip">Postgres</span><span class="chip">Docker</span><span class="chip">FastAPI</span><span class="chip">Entity Resolution</span></div>
+            <div class="explain">The moats are Karnataka-native: Kannada↔Roman transliteration, KIADB shared-plot disambiguation, BESCOM RR-number variants, and Shop Establishment honorific noise — baked into the normalizer and scorer, not bolted on. 63% of MSMEs are informal with no PAN/GSTIN, so there's no reliable join key; KARMA scores matches field-by-field and stays auditable.</div>
+            <div class="card-actions">
+              <a class="button primary" href="https://github.com/Harshith029/KARMA" target="_blank" rel="noopener" data-hover>Code</a>
               <button class="button" type="button" data-explain data-hover>Explain</button>
             </div>
           </div>
@@ -2144,47 +2215,6 @@
           </div>
         </article>
 
-        <article class="project-card reveal" id="project-quickdrop" data-kind="web backend">
-          <div class="project-media">
-            <div class="project-visual quickdrop-visual" role="img" aria-label="WhatsApp grocery ordering flow with nearby kirana routing, QR settlement, and pricing formula">
-              <div class="visual-label"><span>kirana delivery loop</span><span class="visual-badge">whatsapp native</span></div>
-              <div class="quickdrop-map">
-                <div class="phone-card">
-                  <span class="mini-label">customer chat</span>
-                  <div class="chat-bubble">need milk + rice</div>
-                  <div class="chat-bubble is-shop">shop confirms in 6 min</div>
-                  <div class="chat-bubble is-delivery">runner en route</div>
-                </div>
-                <div class="route-card">
-                  <div class="route-head"><b>nearby kirana</b><span>1.8 km</span></div>
-                  <div class="route-steps" aria-hidden="true"><span>cust</span><span>shop</span><span>rider</span></div>
-                  <div class="route-metrics">
-                    <div class="metric-tile"><span>radius</span><b>hyperlocal</b></div>
-                    <div class="metric-tile"><span>basket</span><b>by weight</b></div>
-                    <div class="metric-tile"><span>payout</span><b>UPI monthly</b></div>
-                  </div>
-                  <div class="price-strip">
-                    <div class="price-formula"><span>pricing</span><b>weight × distance</b></div>
-                    <div class="settlement-note">zero app install friction</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="project-body">
-            <div class="project-meta"><span>2026</span><span>Product / Commerce</span></div>
-            <h3>QuickDrop</h3>
-            <p>A WhatsApp-native hyperlocal grocery platform that connects customers directly to neighborhood kirana shops, with weight-distance pricing and monthly UPI settlement.</p>
-            <div class="project-result"><b>Product edge</b> Uses existing shop inventory and WhatsApp behavior — no app install, no logistics overhead, no subsidy burn.</div>
-            <div class="project-tags"><span class="chip">FastAPI</span><span class="chip">React</span><span class="chip">WhatsApp API</span><span class="chip">UPI</span></div>
-            <div class="explain">Distribution is the edge. Customers already use WhatsApp, shops already have inventory, and the weight × distance pricing makes the economics honest.</div>
-            <div class="card-actions">
-              <a class="button primary" href="https://github.com/Harshith029" target="_blank" rel="noopener" data-hover>More on GitHub</a>
-              <button class="button" type="button" data-explain data-hover>Explain</button>
-            </div>
-          </div>
-        </article>
-
         <article class="project-card reveal" id="project-faultline" data-kind="ai backend cloud">
           <div class="project-media">
             <div class="project-visual faultline-visual">
@@ -2209,54 +2239,6 @@
           </div>
         </article>
 
-        <article class="project-card reveal" id="project-chess" data-kind="web">
-          <div class="project-media">
-            <div class="project-visual chess-visual" role="img" aria-label="Interactive chess board with highlighted legal moves and engine state panel">
-              <div class="visual-label"><span>vanilla js engine</span><span class="visual-badge">legal moves</span></div>
-              <div class="board-wrap">
-                <div class="mini-board" aria-hidden="true">
-                  <span class="dark piece-black">&#9820;</span><span class="light"></span><span class="dark piece-black">&#9821;</span><span class="light piece-black">&#9819;</span><span class="dark piece-black">&#9818;</span><span class="light"></span><span class="dark piece-black">&#9822;</span><span class="light piece-black">&#9820;</span>
-                  <span class="light"></span><span class="dark piece-black">&#9823;</span><span class="light"></span><span class="dark capture piece-black">&#9821;</span><span class="light"></span><span class="dark capture piece-black">&#9823;</span><span class="light"></span><span class="dark piece-black">&#9823;</span>
-                  <span class="dark"></span><span class="light"></span><span class="dark legal"></span><span class="light"></span><span class="dark"></span><span class="light"></span><span class="dark legal"></span><span class="light"></span>
-                  <span class="light"></span><span class="dark"></span><span class="light piece-black">&#9823;</span><span class="dark"></span><span class="light selected piece-white">&#9816;</span><span class="dark"></span><span class="light"></span><span class="dark piece-white">&#9817;</span>
-                  <span class="dark"></span><span class="light"></span><span class="dark legal"></span><span class="light"></span><span class="dark"></span><span class="light"></span><span class="dark legal"></span><span class="light"></span>
-                  <span class="light"></span><span class="dark piece-white">&#9815;</span><span class="light"></span><span class="dark legal"></span><span class="light"></span><span class="dark legal"></span><span class="light"></span><span class="dark"></span>
-                  <span class="dark piece-white">&#9817;</span><span class="light"></span><span class="dark"></span><span class="light legal"></span><span class="dark"></span><span class="light legal"></span><span class="dark"></span><span class="light piece-white">&#9817;</span>
-                  <span class="light piece-white">&#9814;</span><span class="dark"></span><span class="light piece-white">&#9815;</span><span class="dark piece-white">&#9813;</span><span class="light piece-white">&#9812;</span><span class="dark"></span><span class="light"></span><span class="dark piece-white">&#9814;</span>
-                </div>
-                <div class="move-panel">
-                  <div class="move-row">turn state <span>white to move</span></div>
-                  <div class="move-row">selected piece <span>knight e5</span></div>
-                  <div class="move-row">legal moves <span>8 found</span></div>
-                  <div class="move-row">check safety <span>clear</span></div>
-                  <div class="move-list">
-                    <span class="move-pill is-best">Nf7+</span>
-                    <span class="move-pill">Nc6</span>
-                    <span class="move-pill">Ng4</span>
-                    <span class="move-pill">Nc4</span>
-                    <span class="move-pill">Nd3</span>
-                    <span class="move-pill">Nf3</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="project-body">
-            <div class="project-meta"><span>2024</span><span>Web / Game Engine</span></div>
-            <h3>2D Chess Engine</h3>
-            <p>A browser-based chess engine built in pure vanilla JavaScript — no frameworks, no libraries. Full move validation, turn logic, legal-move generation, and responsive board UI.</p>
-            <div class="project-snapshot">
-              <div class="snapshot-item"><span>Engine</span><b>Pure JS</b></div>
-              <div class="snapshot-item"><span>Rules</span><b>Validated</b></div>
-              <div class="snapshot-item"><span>UI</span><b>Responsive</b></div>
-            </div>
-            <div class="project-tags"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Vanilla JS</span><span class="chip">Game Logic</span></div>
-            <div class="card-actions">
-              <a class="button primary" href="https://github.com/Harshith029/Chess-game" target="_blank" rel="noopener" data-hover>Code</a>
-              <a class="button" href="https://github.com/Harshith029/Chess-game" target="_blank" rel="noopener" data-hover>Repo</a>
-            </div>
-          </div>
-        </article>
       </div>
     </div>
   </section>
@@ -2335,8 +2317,8 @@
           </div>
           <div class="lab-body">
             <h3>AI Agents With Real Guardrails</h3>
-            <p>Most agent demos skip rollback, cost, and safety. I'm building RL environments where agents have to plan, reason about consequences, and handle failure modes — not just emit plausible-looking output.</p>
-            <div class="lab-meta"><span>active</span> · applied in SafeMigrate</div>
+            <p>Most agent demos skip the part where a tool call has consequences. I'm building security and authorization layers that reason about <em>where an instruction came from</em> before letting an agent act — so prompt injection can't quietly drive a high-risk action.</p>
+            <div class="lab-meta"><span>active</span> · applied in SENTINEL</div>
           </div>
         </article>
         <article class="lab-item">
@@ -2354,8 +2336,8 @@
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18M5 8h14M7 16h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
           </div>
           <div class="lab-body">
-            <h3>Data &gt; Recipe</h3>
-            <p>Coming out of the Nemotron work: the biggest LoRA wins came from understanding data distribution, not from tuning hyperparameters. I'm documenting the diagnostic playbook.</p>
+            <h3>Distilling Verified Reasoning</h3>
+            <p>Coming out of the Nemotron work: for deterministic tasks, the win is generating <em>provably-correct</em> chain-of-thought with solvers and distilling that into a LoRA. Verified traces beat scraped ones — the model learns reasoning that's actually right.</p>
             <div class="lab-meta"><span>documenting</span> · from Nemotron LoRA</div>
           </div>
         </article>
@@ -2394,15 +2376,16 @@
         <div class="brain-panel reveal">
           <div class="brain-head"><b>second <em>brain</em></b><span>LOCAL · PRIVATE</span></div>
           <div class="brain-messages" id="brainMessages">
-            <div class="message ai"><div class="role">Second Brain</div><div class="content">Hi — I am Harshith's local second brain. Ask me anything: <b>projects</b> (SafeMigrate, Nemotron, AITO, QuickDrop, FAULTLINE, Chess), the <b>stack</b>, <b>achievements</b>, <b>hiring terms</b>, <b>process</b>, or how to reach him.</div></div>
+            <div class="message ai"><div class="role">Second Brain</div><div class="content">Hi — I am Harshith's local second brain. Ask me anything: <b>projects</b> (safemigrate-lint, SENTINEL, Nemotron, KARMA, AITO, FAULTLINE), the <b>stack</b>, <b>achievements</b>, <b>hiring terms</b>, <b>process</b>, or how to reach him.</div></div>
           </div>
           <div class="brain-prompts">
             <button class="prompt-chip" type="button" data-question="What is Harshith's strongest skill?" data-hover>Strongest skill?</button>
-            <button class="prompt-chip" type="button" data-question="Tell me about SafeMigrate in depth" data-hover>SafeMigrate deep-dive</button>
+            <button class="prompt-chip" type="button" data-question="Tell me about safemigrate-lint in depth" data-hover>safemigrate-lint</button>
+            <button class="prompt-chip" type="button" data-question="How does SENTINEL block prompt injection?" data-hover>SENTINEL</button>
+            <button class="prompt-chip" type="button" data-question="What is KARMA and the AI for Bharat win?" data-hover>KARMA · hackathon win</button>
             <button class="prompt-chip" type="button" data-question="What's his AWS challenge achievement?" data-hover>AWS achievement</button>
             <button class="prompt-chip" type="button" data-question="Is Harshith available for internships?" data-hover>Availability</button>
             <button class="prompt-chip" type="button" data-question="Why did naive LoRA hurt baseline on Nemotron?" data-hover>Nemotron finding</button>
-            <button class="prompt-chip" type="button" data-question="How does QuickDrop pricing work?" data-hover>QuickDrop pricing</button>
             <button class="prompt-chip" type="button" data-question="What about FAULTLINE's $120 budget constraint?" data-hover>FAULTLINE budget</button>
             <button class="prompt-chip" type="button" data-question="Why should I hire Harshith?" data-hover>Why hire him</button>
             <button class="prompt-chip" type="button" data-question="What is his working process?" data-hover>Process</button>
@@ -2569,7 +2552,7 @@
         <label>Quick presets</label>
         <div class="status-preset-row" id="statusPresetRow">
           <button class="status-preset" type="button" data-status="focused / deep work">focused / deep work</button>
-          <button class="status-preset" type="button" data-status="coding / safemigrate v2">coding / safemigrate</button>
+          <button class="status-preset" type="button" data-status="shipping / safemigrate-lint">shipping / safemigrate-lint</button>
           <button class="status-preset" type="button" data-status="training / lora adapter">training / lora</button>
           <button class="status-preset" type="button" data-status="reading / AIMA notes">reading / AIMA</button>
           <button class="status-preset" type="button" data-status="watching / youtube">watching youtube</button>
@@ -2837,12 +2820,12 @@
     ],
     whoami: ["harshith pali — AI engineer, full-stack developer, solo builder."],
     projects: [
-      "<span class=\"ok\">●</span> safemigrate    — RL env for safe DB migrations [live]",
-      "<span class=\"ok\">●</span> nemotron-lora  — LoRA adapter + reasoning evals",
-      "<span class=\"ok\">●</span> aito           — AI traffic optimizer for city routing",
-      "<span class=\"ok\">●</span> quickdrop      — whatsapp-native hyperlocal grocery",
-      "<span class=\"ok\">●</span> faultline      — pre-incident cascade detection",
-      "<span class=\"ok\">●</span> 2d-chess       — vanilla JS chess engine"
+      "<span class=\"ok\">●</span> safemigrate-lint — postgres migration linter [on pypi]",
+      "<span class=\"ok\">●</span> sentinel         — provenance proxy that blocks prompt injection",
+      "<span class=\"ok\">●</span> nemotron-lora    — LoRA adapter + reasoning evals",
+      "<span class=\"ok\">●</span> karma            — entity resolution for govt databases [hackathon win]",
+      "<span class=\"ok\">●</span> aito             — AI traffic optimizer for city routing",
+      "<span class=\"ok\">●</span> faultline        — pre-incident cascade detection"
     ],
     skills: [
       "<b>ai/ml:</b> python, pytorch, tensorflow, huggingface, lora/peft",
@@ -2851,10 +2834,10 @@
       "<b>frontend:</b> react, next.js, tailwind, vanilla js"
     ],
     achievements: [
+      "<span class=\"ok\">★</span> <b>winner</b> — AI for Bharat 2026, govt of karnataka (project KARMA)",
       "<span class=\"ok\">★</span> <b>top 300 globally</b> — AWS 10,000 AI Ideas Challenge (2025)",
-      "<span class=\"ok\">★</span> safemigrate — live on huggingface spaces",
-      "<span class=\"ok\">★</span> nvidia nemotron reasoning challenge (kaggle)",
-      "<span class=\"ok\">★</span> meta × pytorch × scaler openenv submission"
+      "<span class=\"ok\">★</span> safemigrate-lint — published on pypi, MIT",
+      "<span class=\"ok\">★</span> nvidia nemotron reasoning challenge (kaggle)"
     ],
     stack: () => terminalCommands.skills,
     contact: [
@@ -3019,30 +3002,21 @@
   // Each KB entry can have multiple answer variants (picked randomly) so replies vary naturally.
   const kb = [
     {
-      id: "safemigrate",
-      keywords: ["safemigrate", "safe migrate", "safemig", "migration", "migrations", "rl env", "rl environment", "rollback", "savepoint", "hackathon", "openenv", "db migration", "sql migration"],
+      id: "safemigrate-lint",
+      keywords: ["safemigrate", "safemigrate-lint", "safemigrate lint", "safe migrate", "safemig", "lint", "linter", "migration", "migrations", "postgres", "postgresql", "sql migration", "db migration", "github action", "pre-commit", "precommit", "pglast", "lock wait", "table rewrite", "pypi"],
       answers: [
-        `<b>SafeMigrate</b> is a reinforcement-learning environment for safety-critical database migrations. The core insight: most RL envs reward agents for producing SQL — SafeMigrate rewards them for producing <b>safe</b> SQL. SQLite savepoints for rollback, penalties on unsafe ops, and a dedicated <b>plan</b> action with quality bonuses. Stack: FastAPI + Pydantic + SQLite + Docker. It's <a href="https://huggingface.co/spaces/Harshdev09/safemigrate" target="_blank" rel="noopener">live on HuggingFace Spaces</a>.`,
-        `<b>SafeMigrate</b> is an AI safety project disguised as infra tooling. It teaches agents that migrations have consequences — so planning and rollback become part of the reward loop instead of decorative steps. Three graded tasks, savepoint-based rollback, explicit penalties for unsafe ops. Passed internal tests + compliance. <a href="https://huggingface.co/spaces/Harshdev09/safemigrate" target="_blank" rel="noopener">See it running →</a>`,
-        `The <b>SafeMigrate</b> environment trains agents to plan SQL migrations that won't break production. It uses SQLite savepoints, penalties on destructive writes, and a quality-bonus on the plan action. Built with FastAPI + Pydantic, deployed on HF Spaces with minimal Docker deps. It's Harshith's thesis on what production-ready AI agents look like.`
+        `<b>safemigrate-lint</b> is a GitHub Action, CLI, and pre-commit hook that lints Postgres migration SQL on every PR. It catches the operations that actually break production — lock waits, table rewrites, unsafe constraints — using a real Postgres parser (<b>pglast</b> / libpg_query), so it handles extension SQL like TimescaleDB and PostGIS that trips up other linters. 33 safety rules + 6 opt-in style rules, across CRITICAL / WARNING / STYLE tiers. <a href="https://github.com/Harshith029/safemigrate-lint" target="_blank" rel="noopener">Code</a> · <a href="https://pypi.org/project/safemigrate-lint/" target="_blank" rel="noopener">PyPI</a>.`,
+        `The insight behind <b>safemigrate-lint</b>: Harshith scanned ~700 real production migrations from Cal.com, Mattermost, Supabase, Hasura, and TimescaleDB — and <b>zero</b> of them ran the textbook "dangerous" ops the popular linters warn loudest on. The real risks live one layer deeper: ADD COLUMN GENERATED triggering a table rewrite, ADD CONSTRAINT FK without NOT VALID, constraint drops that silently break invariants. safemigrate-lint is built around those, and it's free + MIT where Atlas Pro charges for similar checks.`,
+        `<b>safemigrate-lint</b> posts a find-or-create PR comment grouping findings by severity — each with the lock it takes and the safe rewrite — and sets a GitHub Check Run you can require in branch protection. Its edge is <b>cross-statement context</b>: it suppresses FK-to-new-table and similar false positives that pile up in single-statement linters. Published on PyPI, MIT-licensed.`
       ]
     },
     {
       id: "nemotron",
-      keywords: ["nemotron", "lora", "peft", "fine tune", "fine-tune", "finetune", "nvidia", "kaggle", "reasoning", "puzzle", "puzzles", "bit manipulation", "cipher", "algebra", "synthetic data", "data distribution"],
+      keywords: ["nemotron", "lora", "peft", "fine tune", "fine-tune", "finetune", "nvidia", "kaggle", "reasoning", "puzzle", "puzzles", "bit manipulation", "cipher", "numeral", "gravity", "unit conversion", "equation", "algebra", "synthetic data", "synthetic cot", "chain of thought", "vllm", "boxed", "solver", "distill", "coverage", "score"],
       answers: [
-        `The <b>Nemotron Reasoning LoRA</b> work taught a counterintuitive lesson: <b>naïve LoRA fine-tuning actually hurt baseline performance</b>. The real leverage came from understanding the train.csv distribution and building puzzle-specific synthetic data — bit manipulation, substitution ciphers, algebraic patterns. Data work beat recipe tweaks, which is usually the real story in applied ML.`,
-        `On <b>Nemotron</b>: three iterations of synthetic data generators and eval harnesses (V1→V3). The finding that mattered — naïve LoRA hurt the baseline. The fix was in data distribution analysis, not hyperparameter tuning. Classic case of "when your model gets worse, look at the data before touching the training loop."`,
-        `<b>Nemotron Reasoning LoRA</b> was a Kaggle competition on NVIDIA's Nemotron model. Harshith built synthetic data generators across bit manipulation, substitution ciphers, and algebraic puzzles, then eval harnesses V1→V3. The insight he took away: <i>data beats recipe</i>. Fine-tuning is easy; understanding why the model is failing is where engineers earn their keep.`
-      ]
-    },
-    {
-      id: "quickdrop",
-      keywords: ["quickdrop", "quick drop", "kirana", "grocery", "whatsapp", "blinkit", "zepto", "delivery", "hyperlocal", "upi", "pricing", "weight distance", "commerce"],
-      answers: [
-        `<b>QuickDrop</b> is a WhatsApp-native hyperlocal grocery platform. Insight: kirana shops already have inventory, trust, and proximity — they just lack a delivery stack. Pricing is <b>weight × distance</b> (honest, not subsidized), orders happen over WhatsApp (zero app install), settlement runs monthly via UPI. It undercuts Blinkit/Zepto on delivery fees by not burning money on 10-minute delivery theater.`,
-        `The <b>QuickDrop</b> model avoids everything Blinkit and Zepto fight over. No dark stores, no 10-minute promise, no app install. Just WhatsApp as the interface, local kirana shops as the supply, weight × distance as the pricing, and monthly UPI for settlement. Shop-led verification kills scams without adding friction. FastAPI backend + React admin dashboard.`,
-        `<b>QuickDrop's</b> edge is distribution. Customers already have WhatsApp, shops already have inventory, and the pricing is honest (weight × distance — no subsidy burn). Monthly UPI settlement, shop-specific QR codes, 13-step rollout guide for new shops. Harshith built it end-to-end: FastAPI backend, React admin dashboard, the lot.`
+        `<b>Nemotron Reasoning LoRA</b> is a from-scratch, fully-offline pipeline for the <b>NVIDIA Nemotron Model Reasoning Challenge</b>. The tasks are deterministic algorithmic puzzles — each shows a few input→output examples of a hidden rule. Harshith wrote a deterministic Python solver per category (gravity, unit conversion, numerals, ciphers, bit manipulation, equations) that infers the rule and emits a step-by-step trace, then distilled those traces into a rank-32 LoRA adapter. <a href="https://github.com/Harshith029/nemotron-reasoning-solvers" target="_blank" rel="noopener">Code</a>.`,
+        `The pipeline has four stages — <b>Solve → Generate → Distill → Submit</b>. Only solver-correct (prompt, trace) pairs make it into the SFT corpus, so the reasoning the model learns is verified, not hallucinated. Solver coverage: <b>100%</b> on cipher, numeral, and unit-conversion; <b>99.7%</b> on gravity; <b>~76%</b> on bit manipulation. <code>equation</code> is the holdout — it composes a per-problem symbol substitution with a numeric rule from just a handful of examples.`,
+        `<b>Nemotron</b>'s lesson: for deterministic puzzles, the leverage is in building correct solvers and distilling <i>verified</i> chain-of-thought — not in throwing more fine-tuning at the base model. The adapter (LoRA rank 32 for Nemotron-3-Nano-30B) is scored in vLLM by extracting the <code>\\boxed{…}</code> answer, with no solver code needed at test time. Hard categories like bit manipulation lean on DSL search + GF(2) affine synthesis.`
       ]
     },
     {
@@ -3064,11 +3038,29 @@
       ]
     },
     {
-      id: "chess",
-      keywords: ["chess", "2d chess", "game", "vanilla js", "vanilla javascript", "no framework", "browser game", "engine"],
+      id: "sentinel",
+      keywords: ["sentinel", "provenance", "prompt injection", "prompt-injection", "agent security", "ai security", "mcp", "model context protocol", "guardrails", "tool call", "exfiltration", "taint", "authorization", "proxy"],
       answers: [
-        `The <b>2D Chess Engine</b> was a deliberate exercise in "no framework." Pure vanilla JavaScript — no React, no libraries, no deps. Full move validation, turn logic, legal-move generation, responsive board UI. Built to keep fundamentals sharp. <a href="https://github.com/Harshith029/Chess-game" target="_blank" rel="noopener">Repo →</a>`,
-        `<b>2D Chess</b> was Harshith's "can I still do this without a framework?" project. Turns out yes — full engine in vanilla JS: move validation, turn-based logic, legal-move highlighting, styled board. No React, no libraries. Just JavaScript and the DOM.`
+        `<b>SENTINEL</b> is a provenance-aware security proxy for agentic AI. It presents as an MCP (Model Context Protocol) server to the agent and an MCP client to the real tool servers, so <b>every tool call physically traverses it</b> — interception is guaranteed by network topology, not by wrapping code. It then authorizes each call against the provenance of everything it derived from. <a href="https://sentinel-i63x.onrender.com" target="_blank" rel="noopener">Live demo →</a>`,
+        `The thesis behind <b>SENTINEL</b>: an AI agent's risk lives in the <i>causal path from instruction-origin to action</i>, not in the text of either. Provenance is a set of trust labels (SYSTEM &gt; USER &gt; AGENT &gt; RETRIEVED_CONTENT) unioned over a span's lineage. If a value is tainted by retrieved web content, it can't drive a high-risk tool like <code>send_email</code> — even when the injection slips past content filters. The auth engine parses policy into a typed AST (never eval) and blocks the call.`,
+        `<b>SENTINEL</b> is agent-agnostic — it secures Microsoft Foundry agents, Claude, GPT, or any custom MCP client identically, with no agent-code changes. Taint only clears through an explicit, auditable StructuredExtractor (schema validation → a fresh SYSTEM-trust value with no inherited ancestry), and a sanitized value can't launder a tainted sibling. <a href="https://github.com/Harshith029/Sentinel" target="_blank" rel="noopener">Code</a>.`
+      ]
+    },
+    {
+      id: "karma",
+      keywords: ["karma", "entity resolution", "ubid", "karnataka", "government", "govt", "databases", "deduplication", "dedup", "record linkage", "kannada", "transliteration", "kspcb", "bescom", "progsolve", "ai for bharat", "bharat", "msme", "govtech"],
+      answers: [
+        `<b>KARMA</b> (Karnataka Active Record and Master Aggregator) does probabilistic entity resolution across 40+ Karnataka government department databases. It assigns one Unified Business Identifier (UBID) per real business by linking records from KSPCB, BESCOM, Shop Establishment, Factories, and Labour systems — <b>no LLMs</b>, with a per-field audit trail on every match. It <b>won AI for Bharat 2026</b>, the Government of Karnataka hackathon (team Progsolve). <a href="https://github.com/Harshith029/KARMA" target="_blank" rel="noopener">Code</a>.`,
+        `The hard part of <b>KARMA</b>: the same business exists 3–5 times across departments with no reliable join key, and 63% of MSMEs are informal with no PAN/GSTIN. KARMA's moats are Karnataka-native — Kannada↔Roman transliteration, KIADB shared-plot disambiguation, BESCOM RR-number variants, and Shop Establishment honorific noise — baked into the normalizer and scorer. Verified on 49,857 synthetic records → 9,253 cross-source UBIDs in ~80 seconds, 101/101 tests passing.`,
+        `<b>KARMA</b> was Harshith's AI for Bharat 2026 hackathon win for the Government of Karnataka, built with team Progsolve. It's an end-to-end working prototype that gives Karnataka Commerce &amp; Industries something they currently can't answer: how many businesses actually operate, where, and with what compliance status — by resolving duplicate records into one auditable identifier.`
+      ]
+    },
+    {
+      id: "hackathon",
+      keywords: ["hackathon", "win", "won", "winner", "award", "ai for bharat", "competition win", "first place"],
+      answers: [
+        `Harshith <b>won AI for Bharat 2026</b> — the Government of Karnataka hackathon — with team Progsolve for <b>KARMA</b>, a system that unifies records across 40+ state government databases into one business identifier. Ask me about <b>KARMA</b> for the technical details.`,
+        `Yes — the headline win is <b>AI for Bharat 2026 (Govt of Karnataka)</b> for project KARMA. On top of that, he ranked <b>top 300 globally</b> in the AWS 10,000 AI Ideas Challenge and published <b>safemigrate-lint</b> on PyPI.`
       ]
     },
     {
@@ -3143,7 +3135,7 @@
       id: "weakness",
       keywords: ["weakness", "weak", "not good at", "bad at", "biggest weakness"],
       answers: [
-        `Honest answer: he's still a student, so he has less production-incident experience than a mid-level engineer at a big company. He compensates with constraint-driven projects (FAULTLINE, SafeMigrate) and fast feedback loops, but he's not going to pretend he's debugged a 3 AM pager page at scale.`,
+        `Honest answer: he's still a student, so he has less production-incident experience than a mid-level engineer at a big company. He compensates with constraint-driven projects (FAULTLINE, SENTINEL) and fast feedback loops, but he's not going to pretend he's debugged a 3 AM pager page at scale.`,
         `The fair answer: limited experience at <i>team</i> scale. Most of his work is solo, which means he hasn't spent years deep in large codebases or long-running cross-team projects. The solo work has forced broad skills fast, but it means he benefits from mentorship on codebase-scale tradeoffs.`
       ]
     },
@@ -3174,7 +3166,7 @@
       id: "greeting",
       keywords: ["hi", "hello", "hey", "yo", "sup", "hola", "greetings", "howdy"],
       answers: [
-        `Hi! Ask me anything about Harshith — his projects (SafeMigrate, Nemotron LoRA, AITO, QuickDrop, FAULTLINE, Chess), his stack, achievements, or availability.`,
+        `Hi! Ask me anything about Harshith — his projects (safemigrate-lint, SENTINEL, Nemotron LoRA, KARMA, AITO, FAULTLINE), his stack, achievements, or availability.`,
         `Hey. I'm Harshith's second brain — ask about projects, hiring, achievements, or process. Typos are fine.`,
         `Hello. What can I tell you — projects, stack, achievements, or hiring?`
       ]
@@ -3183,7 +3175,7 @@
       id: "thanks",
       keywords: ["thanks", "thank you", "ty", "thx", "appreciate"],
       answers: [
-        `Any time. Best way to reach Harshith directly: <a href="mailto:harshith Any time. Best way to reach Harshith directly: <a href="mailto:harshith.pali3286@gmail.com">harshith.pali3286@gmail.com</a>.`,
+        `Any time. Best way to reach Harshith directly: <a href="mailto:harshith.pali3286@gmail.com">harshith.pali3286@gmail.com</a>.`,
         `Glad I could help. If you want to talk to the real Harshith, he's at <a href="mailto:harshith.pali3286@gmail.com">harshith.pali3286@gmail.com</a>.`
       ]
     }
@@ -3272,7 +3264,7 @@
 
   const fallbackAnswers = [
     `I don't have that in my knowledge base yet. Try asking about <b>projects</b>, <b>skills</b>, <b>achievements</b>, <b>availability</b>, or <b>contact</b>. Or ping Harshith directly: <a href="mailto:harshith.pali3286@gmail.com">harshith.pali3286@gmail.com</a>.`,
-    `That one's outside what I know. I can answer about his projects (SafeMigrate, Nemotron, AITO, QuickDrop, FAULTLINE, Chess), stack, process, or how to hire him. For anything else, best to email him directly.`,
+    `That one's outside what I know. I can answer about his projects (safemigrate-lint, SENTINEL, Nemotron, KARMA, AITO, FAULTLINE), stack, process, or how to hire him. For anything else, best to email him directly.`,
     `Not sure about that specifically. I'm trained on his work — projects, stack, achievements, hiring details. If you're asking something else, <a href="mailto:harshith.pali3286@gmail.com">reach out to Harshith</a> directly.`
   ];
 
