@@ -12,7 +12,7 @@ Built with vanilla HTML, CSS, and JavaScript. No frameworks, no build step, no d
 
 - **Dark terminal-editorial aesthetic** — JetBrains Mono + Fraunces, orange accent
 - **Interactive hero terminal** with 20+ commands (`help`, `projects`, `sudo hire`, `joke`, etc.)
-- **Six project cards with custom visuals** — each hand-built in SVG/CSS, showing what the system actually does (SQL safety checks for SafeMigrate, route scoring for AITO, WhatsApp chat flow for QuickDrop, and more)
+- **Six project cards with custom visuals** — each hand-built in SVG/CSS, showing what the system actually does (PR lint findings for safemigrate-lint, provenance taint flow for SENTINEL, solver coverage for Nemotron, entity-resolution UBID matching for KARMA, route scoring for AITO, and cascade drift for FAULTLINE)
 - **Second Brain** — a local knowledge base with fuzzy matching that answers questions about projects, stack, availability, and hiring terms. Runs 100% in the browser, no API keys, no backend.
 - **Command palette** (`⌘K` / `Ctrl+K`) — quick navigation and actions
 - **Live status pill** — rotating activity indicator with password-protected admin panel
@@ -96,7 +96,7 @@ Then open [http://localhost:8000](http://localhost:8000).
 
 ## Admin panel
 
-The floating status pill (bottom-left) has a hidden admin mode for updating your current status (e.g., "coding / safemigrate", "watching youtube", "in class").
+The floating status pill (bottom-left) has a hidden admin mode for updating your current status (e.g., "shipping / safemigrate-lint", "watching youtube", "in class").
 
 **How to access:**
 - Click the ✎ pencil icon on the pill, or
@@ -158,7 +158,7 @@ Current implementation: local bigram fuzzy matching over a ~20-entry knowledge b
 --danger: #ff6f61;  /* warnings */
 ```
 
-**Projects** — edit the `<article class="project-card">` blocks in the Work section. Each card has its own custom SVG/CSS visual — inspect classes like `.safemigrate-visual`, `.quickdrop-visual`, `.traffic-visual` to see how the visuals are constructed.
+**Projects** — edit the `<article class="project-card">` blocks in the Work section. Each card has its own custom SVG/CSS visual — inspect classes like `.safemigrate-visual`, `.sentinel-visual`, `.karma-visual`, `.traffic-visual` to see how the visuals are constructed.
 
 **Socials** — if you change any social link, update it in all five places to stay consistent:
 1. Contact section (section 09) — the grid of `<a class="contact-link">` cards
