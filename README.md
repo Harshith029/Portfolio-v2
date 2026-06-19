@@ -4,7 +4,7 @@ Personal portfolio of **Harshith Pali** — AI Engineer and full-stack developer
 
 Built with vanilla HTML, CSS, and JavaScript. No frameworks, no build step, no dependencies. Runs on plain GitHub Pages.
 
-🔗 **Live:** [harshith029.github.io/Portfolio](https://harshith029.github.io/Portfolio-v2/)
+🔗 **Live:** [harshith029.github.io/Portfolio-v2](https://harshith029.github.io/Portfolio-v2/)
 
 ---
 
