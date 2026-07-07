@@ -6,7 +6,28 @@ import { filters, projects, type Project } from "@/data/projects";
 import { EASE } from "@/lib/motion";
 import { Section } from "@/components/ui/Section";
 import { Reveal, SectionHeading } from "@/components/ui/Reveal";
+import { TrustBadge } from "@/components/ui/TrustBadge";
 import { ArrowUpRight, TrophyIcon } from "@/components/ui/Icons";
+
+function SourceRail({ sources }: { sources: Project["sources"] }) {
+  return (
+    <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 border-t border-line pt-4">
+      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted/60">receipts</span>
+      {sources.map((s) => (
+        <a
+          key={s.href}
+          href={s.href}
+          target="_blank"
+          rel="noopener"
+          className="inline-flex items-center gap-1 font-mono text-[11px] text-muted transition hover:text-accent-soft"
+        >
+          {s.label}
+          <ArrowUpRight className="size-3 opacity-50" />
+        </a>
+      ))}
+    </div>
+  );
+}
 
 function ArchFlow({ steps }: { steps: string[] }) {
   return (
@@ -90,7 +111,7 @@ function MetricBlock({ metrics }: { metrics: Project["metrics"] }) {
 function FeaturedCard({ project }: { project: Project }) {
   return (
     <Reveal>
-      <div className="card-sheen group relative overflow-hidden rounded-3xl border border-line bg-card transition-colors duration-300 hover:border-accent/40">
+      <div id={`project-${project.id}`} className="card-sheen group relative scroll-mt-24 overflow-hidden rounded-3xl border border-line bg-card transition-colors duration-300 hover:border-accent/40">
         <div className="pointer-events-none absolute -right-32 -top-32 size-72 rounded-full bg-accent/10 blur-3xl transition-opacity duration-500 group-hover:opacity-100 md:opacity-60" aria-hidden />
         <div className="grid gap-10 p-8 md:grid-cols-[1.1fr_0.9fr] md:p-12">
           <div>
@@ -99,6 +120,7 @@ function FeaturedCard({ project }: { project: Project }) {
               <span>{project.year}</span>
               <span className="text-muted/50">·</span>
               <span>{project.category}</span>
+              <span className="ml-auto"><TrustBadge trust={project.trust} /></span>
             </div>
             <h3 className="mt-5 font-display text-3xl font-semibold tracking-tight md:text-4xl">{project.title}</h3>
             <p className="mt-2 text-lg font-medium text-accent-soft">{project.oneLiner}</p>
@@ -130,6 +152,9 @@ function FeaturedCard({ project }: { project: Project }) {
             </div>
             <div className="mt-8">
               <ProjectLinks links={project.links} />
+            </div>
+            <div className="mt-7">
+              <SourceRail sources={project.sources} />
             </div>
           </div>
 
@@ -188,19 +213,20 @@ function FeaturedCard({ project }: { project: Project }) {
 function ProjectCard({ project }: { project: Project }) {
   return (
     <TiltCard className="h-full">
-      <div className="card-sheen group relative flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-card p-7 transition-colors duration-300 hover:border-accent/40 md:p-8">
+      <div id={`project-${project.id}`} className="card-sheen group relative flex h-full scroll-mt-24 flex-col overflow-hidden rounded-3xl border border-line bg-card p-7 transition-colors duration-300 hover:border-accent/40 md:p-8">
         <div className="pointer-events-none absolute -right-24 -top-24 size-56 rounded-full bg-accent/[0.07] opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100" aria-hidden />
-        <div className="flex flex-wrap items-center gap-3 font-mono text-[11px] uppercase tracking-widest text-muted">
+        <div className="flex flex-wrap items-center gap-2.5 font-mono text-[11px] uppercase tracking-widest text-muted">
           <span>{project.year}</span>
           <span className="text-muted/50">·</span>
           <span>{project.category}</span>
-          {project.award && (
-            <span className="ml-auto inline-flex items-center gap-1.5 rounded-full border border-amber-400/40 bg-amber-400/10 px-3 py-1 normal-case tracking-normal text-amber-300">
-              <TrophyIcon className="size-3.5" />
-              {project.award}
-            </span>
-          )}
+          <span className="ml-auto"><TrustBadge trust={project.trust} /></span>
         </div>
+        {project.award && (
+          <div className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-full border border-amber-400/40 bg-amber-400/10 px-3 py-1 font-mono text-[11px] text-amber-300">
+            <TrophyIcon className="size-3.5" />
+            {project.award}
+          </div>
+        )}
         <h3 className="mt-4 font-display text-2xl font-semibold tracking-tight">{project.title}</h3>
         <p className="mt-1.5 font-medium text-accent-soft">{project.oneLiner}</p>
         <p className="mt-3 text-sm leading-relaxed text-muted">{project.description}</p>
@@ -224,6 +250,9 @@ function ProjectCard({ project }: { project: Project }) {
         <div className="mt-auto pt-7">
           <ProjectLinks links={project.links} />
         </div>
+        <div className="mt-6">
+          <SourceRail sources={project.sources} />
+        </div>
       </div>
     </TiltCard>
   );
@@ -245,8 +274,17 @@ export function Projects() {
             Systems with <span className="text-gradient">real constraints</span>, built end-to-end.
           </>
         }
-        description="Every project below shipped against something hard — a safety requirement, a budget cap, a state government's data mess. No demos-only work."
+        description="Every project carries a trust label and its receipts. Shipped means you can run it now; verified means a third party validated it; claim is self-reported — and labeled as such, because the honest ones make the proven ones land."
       />
+
+      <Reveal className="mb-8">
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-2 rounded-xl border border-line bg-panel/40 px-4 py-3">
+          <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted/60">trust legend</span>
+          <TrustBadge trust="shipped" withNote />
+          <TrustBadge trust="verified" withNote />
+          <TrustBadge trust="claim" withNote />
+        </div>
+      </Reveal>
 
       <Reveal className="mb-10">
         <div className="flex flex-wrap gap-2" role="group" aria-label="Filter projects">

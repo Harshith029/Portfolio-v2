@@ -14,7 +14,7 @@ export function Journey() {
   return (
     <Section id="journey">
       <SectionHeading
-        label="05 · Journey"
+        label="06 · Journey"
         title={
           <>
             From fundamentals to <span className="text-gradient">funded-grade systems.</span>

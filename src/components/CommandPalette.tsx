@@ -30,7 +30,7 @@ export function CommandPalette() {
 
   const items = useMemo<Item[]>(
     () => [
-      ...["work", "about", "research", "skills", "journey", "achievements", "contact"].map((id) => ({
+      ...["work", "about", "research", "skills", "demo", "journey", "achievements", "contact"].map((id) => ({
         group: "Navigate",
         label: `Go to ${id[0].toUpperCase()}${id.slice(1)}`,
         hint: "Section",

@@ -27,7 +27,7 @@ export function Contact() {
         />
         <div className="relative">
           <Reveal>
-            <p className="font-mono text-xs font-medium uppercase tracking-[0.25em] text-accent">07 · Contact</p>
+            <p className="font-mono text-xs font-medium uppercase tracking-[0.25em] text-accent">08 · Contact</p>
           </Reveal>
           <Reveal delay={0.08}>
             <h2 className="mx-auto mt-5 max-w-2xl font-display text-4xl font-semibold leading-[1.05] tracking-tight md:text-5xl">

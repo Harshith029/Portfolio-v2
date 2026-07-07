@@ -1,3 +1,5 @@
+export type Trust = "shipped" | "verified" | "claim";
+
 export type Project = {
   id: string;
   year: string;
@@ -12,8 +14,18 @@ export type Project = {
   stack: string[];
   tags: string[];
   links: { label: string; href: string; primary?: boolean }[];
+  /** Trust tier — shipped: run it now · verified: third party · claim: self-reported. */
+  trust: Trust;
+  /** Receipts backing the claims on this card. */
+  sources: { label: string; href: string }[];
   featured?: boolean;
   award?: string;
+};
+
+export const TRUST_COPY: Record<Trust, { label: string; note: string }> = {
+  shipped: { label: "shipped", note: "you can run it right now" },
+  verified: { label: "verified", note: "validated by a third party" },
+  claim: { label: "claim", note: "self-reported — labeled honestly" },
 };
 
 export const projects: Project[] = [
@@ -37,6 +49,11 @@ export const projects: Project[] = [
       "Published on PyPI. Posts severity-grouped findings with the lock each op takes and the safe rewrite, and sets a Check Run you can require in branch protection — free, where Atlas Pro charges per-seat.",
     stack: ["Python", "pglast", "GitHub Actions", "CLI", "pre-commit"],
     tags: ["tooling", "data"],
+    trust: "shipped",
+    sources: [
+      { label: "pypi.org/project/safemigrate-lint", href: "https://pypi.org/project/safemigrate-lint/" },
+      { label: "github.com/Harshith029/safemigrate-lint", href: "https://github.com/Harshith029/safemigrate-lint" },
+    ],
     links: [
       { label: "GitHub", href: "https://github.com/Harshith029/safemigrate-lint", primary: true },
       { label: "PyPI", href: "https://pypi.org/project/safemigrate-lint/" },
@@ -63,6 +80,11 @@ export const projects: Project[] = [
       "Agent-agnostic — secures Foundry, Claude, GPT, or any custom MCP client identically. The live demo auto-plays a hero attack and blocks the exfiltration in seconds.",
     stack: ["Python", "MCP", "FastAPI", "OpenTelemetry"],
     tags: ["ai", "security"],
+    trust: "shipped",
+    sources: [
+      { label: "sentinel-i63x.onrender.com", href: "https://sentinel-i63x.onrender.com" },
+      { label: "github.com/Harshith029/Sentinel", href: "https://github.com/Harshith029/Sentinel" },
+    ],
     links: [
       { label: "Live demo", href: "https://sentinel-i63x.onrender.com", primary: true },
       { label: "GitHub", href: "https://github.com/Harshith029/Sentinel" },
@@ -88,6 +110,8 @@ export const projects: Project[] = [
       "Won AI for Bharat 2026 (Government of Karnataka) with team Progsolve. End-to-end working prototype answering what the state currently can't: how many businesses actually operate, where, with what compliance status.",
     stack: ["Python", "Postgres", "Docker", "FastAPI"],
     tags: ["ai", "data"],
+    trust: "verified",
+    sources: [{ label: "github.com/Harshith029/KARMA", href: "https://github.com/Harshith029/KARMA" }],
     links: [{ label: "GitHub", href: "https://github.com/Harshith029/KARMA", primary: true }],
     award: "Winner — AI for Bharat 2026",
   },
@@ -111,6 +135,8 @@ export const projects: Project[] = [
       "Verified reasoning beats scraped reasoning: the model reproduces provably-correct traces because nothing unverified ever entered the training set.",
     stack: ["PyTorch", "LoRA", "vLLM", "HuggingFace", "Synthetic CoT"],
     tags: ["ai", "research"],
+    trust: "verified",
+    sources: [{ label: "github.com/Harshith029/nemotron-reasoning-solvers", href: "https://github.com/Harshith029/nemotron-reasoning-solvers" }],
     links: [{ label: "GitHub", href: "https://github.com/Harshith029/nemotron-reasoning-solvers", primary: true }],
   },
   {
@@ -131,6 +157,8 @@ export const projects: Project[] = [
     outcome: "Routes score dynamically on time-of-day and vehicle mix; buses get priority-lane weighting, school peaks get avoided.",
     stack: ["Python", "TensorFlow", "FastAPI", "Pandas"],
     tags: ["ai"],
+    trust: "claim",
+    sources: [{ label: "github.com/Harshith029/AITO", href: "https://github.com/Harshith029/AITO" }],
     links: [{ label: "GitHub", href: "https://github.com/Harshith029/AITO", primary: true }],
   },
   {
@@ -150,6 +178,8 @@ export const projects: Project[] = [
     outcome: "Serverless end-to-end on Lambda + DynamoDB + API Gateway in ap-south-1, with Claude on Bedrock for root-cause hypotheses.",
     stack: ["AWS Lambda", "DynamoDB", "Bedrock", "API Gateway"],
     tags: ["cloud", "ai"],
+    trust: "claim",
+    sources: [{ label: "github.com/Harshith029/faultline", href: "https://github.com/Harshith029/faultline" }],
     links: [{ label: "GitHub", href: "https://github.com/Harshith029/faultline", primary: true }],
   },
 ];

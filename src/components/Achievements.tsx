@@ -14,7 +14,7 @@ export function Achievements() {
   return (
     <Section id="achievements" className="bg-panel/40">
       <SectionHeading
-        label="06 · Achievements"
+        label="07 · Achievements"
         title={
           <>
             Benchmarked <span className="text-gradient">outside the building.</span>
