@@ -1,84 +1,198 @@
-# harshith.dev — Portfolio v3
+# Harshith.dev — Portfolio
 
 Personal portfolio of **Harshith Pali** — AI Engineer and full-stack developer based in Hyderabad.
 
-🔗 **Live:** [harshith029.github.io/Portfolio-v2](https://harshith029.github.io/Portfolio-v2/)
+Built with vanilla HTML, CSS, and JavaScript. No frameworks, no build step, no dependencies. Runs on plain GitHub Pages.
 
-A premium, dark-only, single-page site: Next.js static export with a React Three Fiber neural-constellation hero, Framer Motion reveals, Lenis smooth scrolling, and a ⌘K command palette.
+🔗 **Live:** [harshith029.github.io/Portfolio-v2](https://harshith029.github.io/Portfolio-v2/)
 
 ---
 
-## Stack
+## Features
 
-- **Next.js 15** (App Router, `output: "export"` — fully static)
-- **TypeScript** (strict)
-- **Tailwind CSS v4**
-- **Framer Motion** — reveals, counters, magnetic buttons, tilt cards
-- **React Three Fiber + Three.js** — hero 3D scene (3 draw calls, lazy-loaded, DPR-capped)
-- **Lenis** — smooth scrolling
-- Fonts: Inter, Space Grotesk, Geist Mono via `next/font`
+- **Dark terminal-editorial aesthetic** — JetBrains Mono + Fraunces, orange accent
+- **Interactive hero terminal** with 20+ commands (`help`, `projects`, `sudo hire`, `joke`, etc.)
+- **Six project cards with custom visuals** — each hand-built in SVG/CSS, showing what the system actually does (PR lint findings for safemigrate-lint, provenance taint flow for SENTINEL, solver coverage for Nemotron, entity-resolution UBID matching for KARMA, route scoring for AITO, and cascade drift for FAULTLINE)
+- **Second Brain** — a local knowledge base with fuzzy matching that answers questions about projects, stack, availability, and hiring terms. Runs 100% in the browser, no API keys, no backend.
+- **Command palette** (`⌘K` / `Ctrl+K`) — quick navigation and actions
+- **Live status pill** — rotating activity indicator with password-protected admin panel
+- **Fully responsive** — mobile, tablet, desktop
+- **Respects `prefers-reduced-motion`**
+- **SEO + Open Graph meta tags** for link previews on Twitter/LinkedIn
 
-## Structure
+---
+
+## Tech stack
+
+- HTML5 / CSS3 / Vanilla JavaScript — no framework, no build step
+- Fonts: [JetBrains Mono](https://www.jetbrains.com/lp/mono/) + [Fraunces](https://fonts.google.com/specimen/Fraunces) via Google Fonts
+- Hosted on GitHub Pages
+
+That's it. No npm, no webpack, no transpilation. One file, one deploy, done.
+
+---
+
+## Project structure
 
 ```
-src/
-├── app/            # layout (SEO, JSON-LD), page, sitemap, robots, manifest, icon
-├── components/
-│   ├── three/      # HeroScene (R3F)
-│   ├── ui/         # Reveal, Magnetic, Counter, Section, Icons
-│   └── …           # Nav, Hero, Projects, About, Research, Skills,
-│                   # Journey, Achievements, Contact, Footer,
-│                   # CommandPalette, SmoothScroll, CursorGlow
-├── data/           # all content: projects, skills, timeline, research, achievements
-└── lib/            # shared easing + scroll helper
+Portfolio/
+├── index.html              # the entire site — HTML, CSS, and JS inline
+├── Harshith Resume.pdf     # downloadable resume
+└── README.md               # this file
 ```
 
-**All content lives in `src/data/`** — edit a project, skill, or timeline entry there and nothing else needs touching.
+Single-file architecture is deliberate:
+- Zero build step, zero dependencies, zero tooling to break
+- Works anywhere HTML works — GitHub Pages, local file, USB stick, anywhere
+- Easy to audit and deploy in one commit
 
-## Development
+---
+
+## Running locally
+
+**Option 1 — Just open the file**
 
 ```bash
-npm install
-npm run dev     # http://localhost:3000
-npm run build   # static export → ./out
+# macOS
+open index.html
+
+# Windows
+start index.html
+
+# Linux
+xdg-open index.html
 ```
 
-## Deployment
+Most features work. The **admin panel password unlock** won't work from `file://` because the `crypto.subtle` API requires a secure context (`https://` or `localhost`). To test that, use Option 2.
 
-Deployed to **GitHub Pages** by [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) on every push to `main`:
+**Option 2 — Run a local server**
 
-1. `npm ci && npm run build` with `NEXT_PUBLIC_BASE_PATH=/Portfolio-v2`
-2. `./out` is uploaded and deployed via `actions/deploy-pages`
+```bash
+# Python 3
+python3 -m http.server 8000
 
-Pages must be set to **"GitHub Actions"** as the build source (Settings → Pages).
-To host at a root domain or on Vercel instead, drop the `NEXT_PUBLIC_BASE_PATH` env — no code changes needed.
+# Node
+npx http-server -p 8000
 
-## Performance notes
+# Or: VS Code with the "Live Server" extension
+```
 
-- Three.js is `next/dynamic`-imported with `ssr: false` — it never blocks first paint
-- The hero scene is 3 draw calls (points, line segments, wireframe core) with a capped DPR of 1.75 and reduced particle counts on mobile
-- `prefers-reduced-motion` disables Lenis, the scene loop, and entrance animations
-- No image assets — visuals are CSS/SVG/canvas
+Then open [http://localhost:8000](http://localhost:8000).
 
-## Design system
+---
 
-| Token | Value |
-|---|---|
-| Background | `#050505` |
-| Panel / Surface / Card | `#0B0B0F` / `#111111` / `#18181B` |
-| Accent | `#3B82F6` (electric blue) |
-| Secondary | `#22D3EE` (cyan) |
-| Success | `#10B981` |
-| Text / Muted | `#FFFFFF` / `#A1A1AA` |
-| Borders | `rgba(255,255,255,0.08)` |
+## Deploying to GitHub Pages
+
+1. Push this repo to GitHub (public)
+2. Go to **Settings → Pages**
+3. **Source:** Deploy from a branch
+4. **Branch:** `main` / `(root)`
+5. Save
+6. Site goes live at `https://YOUR-USERNAME.github.io/REPO-NAME/` within ~1 minute
+
+**For a custom domain:** add a `CNAME` file to the repo root containing your domain (e.g., `harshith.dev`), and add a CNAME DNS record at your registrar pointing to `YOUR-USERNAME.github.io`.
+
+---
+
+## Admin panel
+
+The floating status pill (bottom-left) has a hidden admin mode for updating your current status (e.g., "shipping / safemigrate-lint", "watching youtube", "in class").
+
+**How to access:**
+- Click the ✎ pencil icon on the pill, or
+- Press `Alt + S`, or
+- Type `admin` in the terminal, or
+- Open the command palette (`⌘K`) and select "Admin · set status"
+
+**Authentication:**
+- Protected by a SHA-256 hashed password
+- Hash is stored in the `ADMIN_PASSWORD_HASH` constant inside `index.html`
+- Unlock persists for the current browser session only (uses `sessionStorage`)
+
+**Security caveat:** this is client-side auth. Good enough to keep casual visitors from changing your status, but anyone with DevTools and time could brute-force the hash offline. Fine for a portfolio. Don't use this pattern for actual secrets.
+
+**To change the password:**
+
+Paste this in your browser console, replacing `yourpass` with your new password:
+
+```javascript
+crypto.subtle.digest("SHA-256", new TextEncoder().encode("yourpass"))
+  .then(h => console.log(Array.from(new Uint8Array(h))
+    .map(b => b.toString(16).padStart(2, "0")).join("")));
+```
+
+Copy the 64-character hash it prints, and replace the `ADMIN_PASSWORD_HASH` value in `index.html`.
+
+---
+
+## Second Brain
+
+Interactive Q&A panel in section 07 that knows about the projects, stack, availability, and hiring terms.
+
+Current implementation: local bigram fuzzy matching over a ~20-entry knowledge base. Handles typos and loose phrasing, picks from multiple answer variants so replies don't feel canned.
+
+**How it works:**
+- KB lives in the `kb` array inside the main `<script>` block
+- Each entry has `keywords` (for matching) and `answers` (an array of variants)
+- `similarity()` function scores bigram overlap between the user's question and each entry
+- Best-scoring entry above a 0.45 threshold wins; otherwise a fallback response is shown
+- `lastAnswerIndex` prevents the same variant from repeating twice in a row
+
+**To add a new Q&A topic:**
+1. Add a new object to the `kb` array with `id`, `keywords` (array of strings), and `answers` (array of HTML strings)
+2. Save and reload — no build step, works immediately
+
+**Limits:** keyword matching has blind spots with negations ("why *shouldn't* I hire you?") or out-of-scope questions. A future upgrade could swap this for a real LLM via a serverless proxy to Claude or GPT — but the local version keeps the site free to run with zero backend.
+
+---
+
+## Customization
+
+**Colors** — edit the CSS `:root` variables at the top of `index.html`:
+
+```css
+--accent: #ff5b2e;  /* main orange */
+--amber: #f5c76a;   /* secondary highlight */
+--cyan: #7fd9cf;    /* data / info */
+--green: #7ad67a;   /* success */
+--danger: #ff6f61;  /* warnings */
+```
+
+**Projects** — edit the `<article class="project-card">` blocks in the Work section. Each card has its own custom SVG/CSS visual — inspect classes like `.safemigrate-visual`, `.sentinel-visual`, `.karma-visual`, `.traffic-visual` to see how the visuals are constructed.
+
+**Socials** — if you change any social link, update it in all five places to stay consistent:
+1. Contact section (section 09) — the grid of `<a class="contact-link">` cards
+2. Footer — the "Elsewhere" column
+3. Command palette — `paletteActions` object in the main script
+4. Terminal `contact` command — the `terminalCommands.contact` array
+5. Second Brain KB — the `contact` entry in the `kb` array
+
+**Status presets** — edit the `.status-preset` buttons in the status admin modal to change what quick-preset moods are available.
+
+---
+
+## Credits
+
+- Design & engineering: Harshith Pali (built with pair-programming from Claude)
+- Fonts: [JetBrains Mono](https://www.jetbrains.com/lp/mono/) · [Fraunces](https://fonts.google.com/specimen/Fraunces)
+- Hosting: GitHub Pages
+
+Design influences: editorial-dev aesthetic popularized by sites like [rauno.me](https://rauno.me), [linear.app](https://linear.app), and [vercel.com](https://vercel.com). Specific layouts, visuals, content, and code are original to this project.
+
+---
 
 ## License
 
 **Code:** MIT — fork, study, adapt.
-**Content** (project descriptions, copy, achievements): © 2026 Harshith Pali. Use the code as a scaffold, but write your own story.
+
+**Content** (project descriptions, copy, achievements, Second Brain responses): © 2026 Harshith Pali. Please don't copy verbatim for your own portfolio — use the code as a scaffold, but write your own story.
+
+---
 
 ## Contact
 
 - **Email:** [harshith.pali3286@gmail.com](mailto:harshith.pali3286@gmail.com)
 - **GitHub:** [@Harshith029](https://github.com/Harshith029)
 - **LinkedIn:** [krishnaharshith](https://www.linkedin.com/in/krishnaharshith/)
+- **HuggingFace:** [@Harshdev09](https://huggingface.co/Harshdev09)
+- **Kaggle:** [@harshithpali](https://www.kaggle.com/harshithpali)
