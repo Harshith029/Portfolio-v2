@@ -142,7 +142,7 @@ Current implementation: local bigram fuzzy matching over a ~20-entry knowledge b
 1. Add a new object to the `kb` array with `id`, `keywords` (array of strings), and `answers` (array of HTML strings)
 2. Save and reload — no build step, works immediately
 
-**Limits:** keyword matching has blind spots with negations ("why *shouldn't* I hire you?") or out-of-scope questions. A future upgrade could swap this for a real LLM via a serverless proxy to Claude or GPT — but the local version keeps the site free to run with zero backend.
+**Limits:** keyword matching has blind spots with negations ("why *shouldn't* I hire you?") or out-of-scope questions. A future upgrade could swap this for a real LLM via a serverless proxy to an LLM API — but the local version keeps the site free to run with zero backend.
 
 ---
 
