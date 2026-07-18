@@ -173,7 +173,7 @@ Current implementation: local bigram fuzzy matching over a ~20-entry knowledge b
 
 ## Credits
 
-- Design & engineering: Harshith Pali (built with pair-programming from Claude)
+- Design & engineering: Harshith Pali
 - Fonts: [JetBrains Mono](https://www.jetbrains.com/lp/mono/) · [Fraunces](https://fonts.google.com/specimen/Fraunces)
 - Hosting: GitHub Pages
 
