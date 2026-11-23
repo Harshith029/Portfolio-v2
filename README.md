@@ -37,7 +37,6 @@ That's it. No npm, no webpack, no transpilation. One file, one deploy, done.
 ```
 Portfolio/
 ├── index.html              # the entire site — HTML, CSS, and JS inline
-├── Harshith Resume.pdf     # downloadable resume
 └── README.md               # this file
 ```
 
